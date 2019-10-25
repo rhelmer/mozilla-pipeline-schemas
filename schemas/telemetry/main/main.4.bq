@@ -116,6 +116,16 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "is_web_extension",
+                    "type": "BOOL"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "multiprocess_compatible",
+                    "type": "BOOL"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "name",
                     "type": "STRING"
                   },
@@ -651,6 +661,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "is_in_optout_sample",
+            "type": "BOOL"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "launcher_process_state",
             "type": "INT64"
           },
@@ -701,6 +716,23 @@
             ],
             "mode": "NULLABLE",
             "name": "update",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "user_prefs",
             "type": "RECORD"
           }
         ],
@@ -869,6 +901,11 @@
                     "fields": [
                       {
                         "mode": "NULLABLE",
+                        "name": "no_constant_buffer_offsetting",
+                        "type": "BOOL"
+                      },
+                      {
+                        "mode": "NULLABLE",
                         "name": "status",
                         "type": "STRING"
                       }
@@ -941,6 +978,30 @@
                     ],
                     "mode": "NULLABLE",
                     "name": "gpu_process",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "status",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "NULLABLE",
+                    "name": "webrender",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "status",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "NULLABLE",
+                    "name": "wr_qualified",
                     "type": "RECORD"
                   }
                 ],
@@ -1071,6 +1132,11 @@
           {
             "mode": "NULLABLE",
             "name": "is_wow64",
+            "type": "BOOL"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "is_wow_arm64",
             "type": "BOOL"
           },
           {
@@ -4328,6 +4394,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "gc_effectiveness",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "gc_in_progress_ms",
             "type": "STRING"
           },
@@ -5453,6 +5524,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "keypress_present_latency",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "link_icon_sizes_attr_dimension",
             "type": "STRING"
           },
@@ -6164,6 +6240,11 @@
           {
             "mode": "NULLABLE",
             "name": "network_connection_count",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "network_cross_origin_stylesheet_content_type",
             "type": "STRING"
           },
           {
@@ -8028,6 +8109,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "telemetry_event_recording_error",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "telemetry_event_registration_error",
             "type": "STRING"
           },
@@ -8289,6 +8375,11 @@
           {
             "mode": "NULLABLE",
             "name": "timeout_execution_fg_tracking_ms",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "tls_delegated_credentials_time_until_ready_ms",
             "type": "STRING"
           },
           {
@@ -12798,6 +12889,16 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "use_counter2_css_property_rotate_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_rotate_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "use_counter2_css_property_row_gap_document",
             "type": "STRING"
           },
@@ -12844,6 +12945,16 @@
           {
             "mode": "NULLABLE",
             "name": "use_counter2_css_property_ry_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_scale_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_scale_page",
             "type": "STRING"
           },
           {
@@ -13654,6 +13765,16 @@
           {
             "mode": "NULLABLE",
             "name": "use_counter2_css_property_transition_timing_function_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_translate_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_translate_page",
             "type": "STRING"
           },
           {
@@ -15878,6 +15999,16 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_bevelled_attribute_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_bevelled_attribute_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "use_counter2_deprecated_math_ml_deprecated_line_thickness_value_document",
             "type": "STRING"
           },
@@ -15908,12 +16039,52 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_menclose_notation_radical_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_menclose_notation_radical_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_mfenced_element_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_mfenced_element_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_script_shift_attributes_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_script_shift_attributes_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "use_counter2_deprecated_math_ml_deprecated_style_attribute_document",
             "type": "STRING"
           },
           {
             "mode": "NULLABLE",
             "name": "use_counter2_deprecated_math_ml_deprecated_style_attribute_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_x_link_attribute_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_x_link_attribute_page",
             "type": "STRING"
           },
           {
@@ -16514,6 +16685,316 @@
           {
             "mode": "NULLABLE",
             "name": "use_counter2_getusermediaxorigin_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_adoptedstylesheets_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_adoptedstylesheets_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_caretrangefrompoint_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_caretrangefrompoint_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_clear_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_clear_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_exitpictureinpicture_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_exitpictureinpicture_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_featurepolicy_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_featurepolicy_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onbeforecopy_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onbeforecopy_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onbeforecut_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onbeforecut_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onbeforepaste_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onbeforepaste_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_oncancel_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_oncancel_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onfreeze_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onfreeze_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onmousewheel_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onmousewheel_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onresume_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onresume_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onsearch_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onsearch_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onsecuritypolicyviolation_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onsecuritypolicyviolation_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onwebkitfullscreenchange_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onwebkitfullscreenchange_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onwebkitfullscreenerror_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_onwebkitfullscreenerror_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_pictureinpictureelement_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_pictureinpictureelement_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_pictureinpictureenabled_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_pictureinpictureenabled_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_registerelement_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_registerelement_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_wasdiscarded_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_wasdiscarded_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitcancelfullscreen_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitcancelfullscreen_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitcurrentfullscreenelement_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitcurrentfullscreenelement_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitexitfullscreen_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitexitfullscreen_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitfullscreenelement_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitfullscreenelement_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitfullscreenenabled_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitfullscreenenabled_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkithidden_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkithidden_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitisfullscreen_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitisfullscreen_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitvisibilitystate_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_webkitvisibilitystate_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_xmlencoding_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_xmlencoding_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_xmlstandalone_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_xmlstandalone_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_xmlversion_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_htmldocument_xmlversion_page",
             "type": "STRING"
           },
           {
@@ -17838,6 +18319,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "wr_framebuild_time",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "wr_render_time",
             "type": "STRING"
           },
@@ -17878,6 +18364,21 @@
       },
       {
         "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "addons",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "async_plugin_init",
+            "type": "BOOL"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "flash_version",
+            "type": "STRING"
+          },
           {
             "mode": "NULLABLE",
             "name": "previous_build_id",
@@ -20213,6 +20714,23 @@
               }
             ],
             "mode": "REPEATED",
+            "name": "uptake_remote_content_result_1",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
             "name": "urlclassifier_cl_keyed_update_time",
             "type": "RECORD"
           },
@@ -20661,6 +21179,44 @@
         ],
         "mode": "NULLABLE",
         "name": "keyed_histograms",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "REPEATED",
+                "name": "list",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "memory_map",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "mode": "REPEATED",
+                    "name": "list",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "list",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "stacks",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "late_writes",
         "type": "RECORD"
       },
       {
@@ -23520,6 +24076,11 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "gc_effectiveness",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "gc_in_progress_ms",
                     "type": "STRING"
                   },
@@ -24661,6 +25222,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "js_web_parser_compile_lazy_after_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "keypress_present_latency",
                     "type": "STRING"
                   },
                   {
@@ -27096,6 +27662,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "telemetry_discarded_send_pings_size_mb",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_event_recording_error",
                     "type": "STRING"
                   },
                   {
@@ -31845,6 +32416,16 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_rotate_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_rotate_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "use_counter2_css_property_row_gap_document",
                     "type": "STRING"
                   },
@@ -31891,6 +32472,16 @@
                   {
                     "mode": "NULLABLE",
                     "name": "use_counter2_css_property_ry_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_scale_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_scale_page",
                     "type": "STRING"
                   },
                   {
@@ -32701,6 +33292,16 @@
                   {
                     "mode": "NULLABLE",
                     "name": "use_counter2_css_property_transition_timing_function_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_translate_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_translate_page",
                     "type": "STRING"
                   },
                   {
@@ -34925,6 +35526,16 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_bevelled_attribute_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_bevelled_attribute_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "use_counter2_deprecated_math_ml_deprecated_line_thickness_value_document",
                     "type": "STRING"
                   },
@@ -34955,12 +35566,52 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_menclose_notation_radical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_menclose_notation_radical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_mfenced_element_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_mfenced_element_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_script_shift_attributes_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_script_shift_attributes_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "use_counter2_deprecated_math_ml_deprecated_style_attribute_document",
                     "type": "STRING"
                   },
                   {
                     "mode": "NULLABLE",
                     "name": "use_counter2_deprecated_math_ml_deprecated_style_attribute_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_x_link_attribute_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_x_link_attribute_page",
                     "type": "STRING"
                   },
                   {
@@ -35561,6 +36212,316 @@
                   {
                     "mode": "NULLABLE",
                     "name": "use_counter2_getusermediaxorigin_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_adoptedstylesheets_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_adoptedstylesheets_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_caretrangefrompoint_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_caretrangefrompoint_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_clear_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_clear_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_exitpictureinpicture_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_exitpictureinpicture_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_featurepolicy_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_featurepolicy_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onbeforecopy_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onbeforecopy_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onbeforecut_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onbeforecut_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onbeforepaste_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onbeforepaste_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_oncancel_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_oncancel_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onfreeze_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onfreeze_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onmousewheel_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onmousewheel_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onresume_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onresume_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onsearch_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onsearch_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onsecuritypolicyviolation_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onsecuritypolicyviolation_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onwebkitfullscreenchange_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onwebkitfullscreenchange_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onwebkitfullscreenerror_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_onwebkitfullscreenerror_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_pictureinpictureelement_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_pictureinpictureelement_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_pictureinpictureenabled_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_pictureinpictureenabled_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_registerelement_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_registerelement_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_wasdiscarded_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_wasdiscarded_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitcancelfullscreen_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitcancelfullscreen_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitcurrentfullscreenelement_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitcurrentfullscreenelement_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitexitfullscreen_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitexitfullscreen_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitfullscreenelement_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitfullscreenelement_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitfullscreenenabled_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitfullscreenenabled_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkithidden_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkithidden_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitisfullscreen_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitisfullscreen_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitvisibilitystate_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_webkitvisibilitystate_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_xmlencoding_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_xmlencoding_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_xmlstandalone_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_xmlstandalone_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_xmlversion_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_htmldocument_xmlversion_page",
                     "type": "STRING"
                   },
                   {
@@ -38788,6 +39749,23 @@
                       }
                     ],
                     "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
                     "name": "urlclassifier_cl_keyed_update_time",
                     "type": "RECORD"
                   },
@@ -39271,6 +40249,40 @@
                       }
                     ],
                     "mode": "REPEATED",
+                    "name": "telemetry_accumulate_unknown_histogram_keys",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_event_counts",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
                     "name": "webrtc_sdp_parser_diff",
                     "type": "RECORD"
                   },
@@ -39318,6 +40330,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "browser_feeds_preview_loaded",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_usage_graphite",
                     "type": "INT64"
                   },
                   {
@@ -39462,7 +40479,37 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "telemetry_discarded_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_child_events",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "telemetry_process_creation_timestamp_inconsistent",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_profile_directory_scans",
                     "type": "INT64"
                   },
                   {
@@ -39553,6 +40600,380 @@
             ],
             "mode": "NULLABLE",
             "name": "content",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f0_",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f1_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f2_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f3_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f4_",
+                    "type": "STRING"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "f5_",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "events",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "histograms",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "keyed_histograms",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_accumulate_unknown_histogram_keys",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_event_counts",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "keyed_scalars",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_usage_graphite",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_child_events",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_profile_directory_scans",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "scalars",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "NULLABLE",
+            "name": "dynamic",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f0_",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f1_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f2_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f3_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f4_",
+                    "type": "STRING"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "f5_",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "events",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "histograms",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "keyed_histograms",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_accumulate_unknown_histogram_keys",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_event_counts",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "keyed_scalars",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_usage_graphite",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_child_events",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_profile_directory_scans",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "scalars",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "NULLABLE",
+            "name": "extension",
             "type": "RECORD"
           },
           {
@@ -39760,6 +41181,23 @@
                     "mode": "REPEATED",
                     "name": "opengl_compositing_failure_id",
                     "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
                   }
                 ],
                 "mode": "NULLABLE",
@@ -39920,10 +41358,110 @@
                     "mode": "REPEATED",
                     "name": "opengl_compositing_failure_id",
                     "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
                   }
                 ],
                 "mode": "NULLABLE",
                 "name": "keyed_histograms",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_accumulate_unknown_histogram_keys",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_event_counts",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "keyed_scalars",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_usage_graphite",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_child_events",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_profile_directory_scans",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "scalars",
                 "type": "RECORD"
               }
             ],
@@ -40770,6 +42308,23 @@
                       {
                         "mode": "NULLABLE",
                         "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "security_contentblocker_permissions",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
                         "type": "BOOL"
                       }
                     ],
@@ -40860,6 +42415,40 @@
                     ],
                     "mode": "REPEATED",
                     "name": "telemetry_accumulate_clamped_values",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_accumulate_unknown_histogram_keys",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_event_counts",
                     "type": "RECORD"
                   },
                   {
@@ -40971,6 +42560,11 @@
               },
               {
                 "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "a11y_backplate",
+                    "type": "BOOL"
+                  },
                   {
                     "mode": "NULLABLE",
                     "name": "a11y_indicator_acted_on",
@@ -41154,6 +42748,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "browser_timings_last_shutdown",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_usage_graphite",
                     "type": "INT64"
                   },
                   {
@@ -41608,6 +43207,16 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "networking_ftp_opened_channels_files",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "networking_ftp_opened_channels_listings",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "networking_http_connections_captive_portal",
                     "type": "INT64"
                   },
@@ -41693,6 +43302,11 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "security_tls_delegated_credentials_txn",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "services_sync_fxa_verification_method",
                     "type": "STRING"
                   },
@@ -41769,6 +43383,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "telemetry_profile_directory_scan_date",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_profile_directory_scans",
                     "type": "INT64"
                   },
                   {
@@ -42074,6 +43693,193 @@
             ],
             "mode": "NULLABLE",
             "name": "parent",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f0_",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f1_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f2_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f3_",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f4_",
+                    "type": "STRING"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "f5_",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "events",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "histograms",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "uptake_remote_content_result_1",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "keyed_histograms",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_accumulate_unknown_histogram_keys",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_event_counts",
+                    "type": "RECORD"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "keyed_scalars",
+                "type": "RECORD"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_usage_graphite",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_child_events",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_profile_directory_scans",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "scalars",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "NULLABLE",
+            "name": "socket",
             "type": "RECORD"
           }
         ],
