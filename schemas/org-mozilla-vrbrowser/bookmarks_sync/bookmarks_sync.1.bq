@@ -209,21 +209,84 @@
         "fields": [
           {
             "mode": "NULLABLE",
-            "name": "glean_core_migration_successful",
-            "type": "BOOL"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "glean_error_preinit_tasks_timeout",
-            "type": "BOOL"
+            "name": "bookmarks_sync_outgoing_batches",
+            "type": "INT64"
           }
         ],
         "mode": "NULLABLE",
-        "name": "boolean",
+        "name": "counter",
         "type": "RECORD"
       },
       {
         "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "bookmarks_sync_finished_at",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "bookmarks_sync_started_at",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "datetime",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "bookmarks_sync_incoming",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "bookmarks_sync_outgoing",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "bookmarks_sync_remote_tree_problems",
+            "type": "RECORD"
+          },
           {
             "fields": [
               {
@@ -261,6 +324,42 @@
         ],
         "mode": "NULLABLE",
         "name": "labeled_counter",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "bookmarks_sync_failure_reason",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "labeled_string",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "bookmarks_sync_uid",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "string",
         "type": "RECORD"
       }
     ],

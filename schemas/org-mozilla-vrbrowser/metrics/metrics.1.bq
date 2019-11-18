@@ -8,58 +8,68 @@
     "fields": [
       {
         "mode": "NULLABLE",
+        "name": "android_sdk_version",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "app_build",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "app_channel",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "app_display_version",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
         "name": "architecture",
         "type": "STRING"
       },
       {
         "mode": "NULLABLE",
-        "name": "build_id",
+        "name": "client_id",
         "type": "STRING"
       },
       {
         "mode": "NULLABLE",
-        "name": "channel",
+        "name": "device_manufacturer",
         "type": "STRING"
       },
       {
         "mode": "NULLABLE",
-        "name": "display_version",
+        "name": "device_model",
         "type": "STRING"
       },
       {
         "mode": "NULLABLE",
-        "name": "name",
+        "name": "first_run_date",
         "type": "STRING"
       },
       {
         "mode": "NULLABLE",
-        "name": "platform_version",
+        "name": "os",
         "type": "STRING"
       },
       {
         "mode": "NULLABLE",
-        "name": "vendor",
+        "name": "os_version",
         "type": "STRING"
       },
       {
         "mode": "NULLABLE",
-        "name": "version",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "xpcom_abi",
+        "name": "telemetry_sdk_build",
         "type": "STRING"
       }
     ],
     "mode": "NULLABLE",
-    "name": "application",
+    "name": "client_info",
     "type": "RECORD"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "creation_date",
-    "type": "STRING"
   },
   {
     "mode": "NULLABLE",
@@ -69,89 +79,41 @@
   {
     "fields": [
       {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "creation_date",
-            "type": "FLOAT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "first_use_date",
-            "type": "FLOAT64"
-          }
-        ],
         "mode": "NULLABLE",
-        "name": "profile",
-        "type": "RECORD"
+        "name": "category",
+        "type": "STRING"
       },
       {
         "fields": [
           {
             "mode": "NULLABLE",
-            "name": "locale",
+            "name": "key",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "value",
             "type": "STRING"
           }
         ],
-        "mode": "NULLABLE",
-        "name": "settings",
+        "mode": "REPEATED",
+        "name": "extra",
         "type": "RECORD"
       },
       {
-        "fields": [
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "speed_m_hz",
-                "type": "FLOAT64"
-              }
-            ],
-            "mode": "NULLABLE",
-            "name": "cpu",
-            "type": "RECORD"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "memory_mb",
-            "type": "FLOAT64"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "locale",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "name",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "version",
-                "type": "STRING"
-              }
-            ],
-            "mode": "NULLABLE",
-            "name": "os",
-            "type": "RECORD"
-          }
-        ],
         "mode": "NULLABLE",
-        "name": "system",
-        "type": "RECORD"
+        "name": "name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "timestamp",
+        "type": "INT64"
       }
     ],
-    "mode": "NULLABLE",
-    "name": "environment",
+    "mode": "REPEATED",
+    "name": "events",
     "type": "RECORD"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "id",
-    "type": "STRING"
   },
   {
     "fields": [
@@ -218,33 +180,6 @@
         "fields": [
           {
             "mode": "NULLABLE",
-            "name": "app_build_id",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_name",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_update_channel",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_version",
-            "type": "STRING"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "uri",
-        "type": "RECORD"
-      },
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
             "name": "browser",
             "type": "STRING"
           },
@@ -266,6 +201,83 @@
     ],
     "mode": "NULLABLE",
     "name": "metadata",
+    "type": "RECORD"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "glean_core_migration_successful",
+            "type": "BOOL"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "glean_error_preinit_tasks_timeout",
+            "type": "BOOL"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "boolean",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "glean_error_invalid_label",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "glean_error_invalid_value",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "labeled_counter",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "distribution_channel_name",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "string",
+        "type": "RECORD"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "metrics",
     "type": "RECORD"
   },
   {
@@ -297,17 +309,7 @@
     "fields": [
       {
         "mode": "NULLABLE",
-        "name": "duration",
-        "type": "FLOAT64"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "ecosystem_client_id",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "reason",
+        "name": "end_time",
         "type": "STRING"
       },
       {
@@ -321,27 +323,49 @@
             "fields": [
               {
                 "mode": "NULLABLE",
-                "name": "key",
+                "name": "branch",
                 "type": "STRING"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "type",
+                    "type": "STRING"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "extra",
+                "type": "RECORD"
               }
             ],
-            "mode": "REPEATED",
+            "mode": "NULLABLE",
             "name": "value",
             "type": "RECORD"
           }
         ],
         "mode": "REPEATED",
-        "name": "scalars",
+        "name": "experiments",
         "type": "RECORD"
       },
       {
         "mode": "NULLABLE",
-        "name": "uid",
+        "name": "ping_type",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "seq",
+        "type": "INT64"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "start_time",
         "type": "STRING"
       }
     ],
     "mode": "NULLABLE",
-    "name": "payload",
+    "name": "ping_info",
     "type": "RECORD"
   },
   {
@@ -353,15 +377,5 @@
     "mode": "NULLABLE",
     "name": "submission_timestamp",
     "type": "TIMESTAMP"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "type",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "version",
-    "type": "FLOAT64"
   }
 ]

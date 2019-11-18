@@ -214,6 +214,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "glean_error_preinit_tasks_timeout",
+            "type": "BOOL"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "metrics_default_browser",
             "type": "BOOL"
           }
@@ -324,6 +329,11 @@
           {
             "mode": "NULLABLE",
             "name": "metrics_default_moz_browser",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "metrics_total_uri_count",
             "type": "STRING"
           },
           {

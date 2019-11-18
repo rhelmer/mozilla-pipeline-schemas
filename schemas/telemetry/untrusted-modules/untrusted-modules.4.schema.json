@@ -408,6 +408,17 @@
           },
           "type": "object"
         },
+        "services": {
+          "properties": {
+            "accountEnabled": {
+              "type": "boolean"
+            },
+            "syncEnabled": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
         "settings": {
           "properties": {
             "addonCompatibilityCheckEnabled": {
@@ -1026,7 +1037,10 @@
             "os": {
               "properties": {
                 "installYear": {
-                  "type": "number"
+                  "type": [
+                    "number",
+                    "null"
+                  ]
                 },
                 "kernelVersion": {
                   "type": "string"

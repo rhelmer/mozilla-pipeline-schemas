@@ -58,6 +58,11 @@
   },
   {
     "mode": "NULLABLE",
+    "name": "client_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
     "name": "creation_date",
     "type": "STRING"
   },
@@ -65,88 +70,6 @@
     "mode": "NULLABLE",
     "name": "document_id",
     "type": "STRING"
-  },
-  {
-    "fields": [
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "creation_date",
-            "type": "FLOAT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "first_use_date",
-            "type": "FLOAT64"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "profile",
-        "type": "RECORD"
-      },
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "locale",
-            "type": "STRING"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "settings",
-        "type": "RECORD"
-      },
-      {
-        "fields": [
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "speed_m_hz",
-                "type": "FLOAT64"
-              }
-            ],
-            "mode": "NULLABLE",
-            "name": "cpu",
-            "type": "RECORD"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "memory_mb",
-            "type": "FLOAT64"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "locale",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "name",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "version",
-                "type": "STRING"
-              }
-            ],
-            "mode": "NULLABLE",
-            "name": "os",
-            "type": "RECORD"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "system",
-        "type": "RECORD"
-      }
-    ],
-    "mode": "NULLABLE",
-    "name": "environment",
-    "type": "RECORD"
   },
   {
     "mode": "NULLABLE",
@@ -292,57 +215,6 @@
     "mode": "NULLABLE",
     "name": "normalized_os_version",
     "type": "STRING"
-  },
-  {
-    "fields": [
-      {
-        "mode": "NULLABLE",
-        "name": "duration",
-        "type": "FLOAT64"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "ecosystem_client_id",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "reason",
-        "type": "STRING"
-      },
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "key",
-            "type": "STRING"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "value",
-            "type": "RECORD"
-          }
-        ],
-        "mode": "REPEATED",
-        "name": "scalars",
-        "type": "RECORD"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "uid",
-        "type": "STRING"
-      }
-    ],
-    "mode": "NULLABLE",
-    "name": "payload",
-    "type": "RECORD"
   },
   {
     "mode": "NULLABLE",

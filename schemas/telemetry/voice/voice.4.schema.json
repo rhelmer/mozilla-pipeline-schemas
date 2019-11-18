@@ -408,6 +408,17 @@
           },
           "type": "object"
         },
+        "services": {
+          "properties": {
+            "accountEnabled": {
+              "type": "boolean"
+            },
+            "syncEnabled": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
         "settings": {
           "properties": {
             "addonCompatibilityCheckEnabled": {
@@ -1026,7 +1037,10 @@
             "os": {
               "properties": {
                 "installYear": {
-                  "type": "number"
+                  "type": [
+                    "number",
+                    "null"
+                  ]
                 },
                 "kernelVersion": {
                   "type": "string"
@@ -1116,6 +1130,34 @@
     },
     "payload": {
       "properties": {
+        "audioTime": {
+          "description": "Time in milliseconds of the recording",
+          "title": "Amount of spoken time",
+          "type": "integer"
+        },
+        "country": {
+          "title": "User country code",
+          "type": "string"
+        },
+        "deepSpeechConfidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence of DeepSpeech text-to-speech transcription",
+          "type": "number"
+        },
+        "deepSpeechMatches": {
+          "title": "Did the DeepSpeech transcription match with Google's?",
+          "type": "boolean"
+        },
+        "deepSpeechServerTime": {
+          "description": "Milliseconds for the DeepSpeech transcription to complete and respond",
+          "title": "Response time of DeepSpeech server",
+          "type": "integer"
+        },
+        "extensionInstallDate": {
+          "title": "Timestamp when the extension was installed",
+          "type": "integer"
+        },
         "extensionInstallationChannel": {
           "description": "Where the user first installed the extension (e.g., internal_beta, external_beta, etc)",
           "title": "First install channel",
@@ -1200,12 +1242,28 @@
           "title": "Was the intent action successful?",
           "type": "boolean"
         },
+        "intentTime": {
+          "description": "Milliseconds between getting the utterance and execution the intent",
+          "title": "Time to execute the intent",
+          "type": "integer"
+        },
         "internalError": {
           "title": "If there was an unexpected error, the name of that error",
           "type": "string"
         },
+        "localHour": {
+          "description": "The hour, 0-23, in the local timezone when the action was run",
+          "title": "Local hour of action",
+          "type": "integer"
+        },
+        "numberOfOpenTabs": {
+          "description": "A count of the number of tabs in all windows, that are open when the tool is activated",
+          "title": "Number of open tabs",
+          "type": "integer"
+        },
         "serverErrorIntentParser": {
-          "title": "Error with the server intent parser",
+          "description": "Error with the server intent parser",
+          "title": "DEPRECATED",
           "type": "string"
         },
         "serverErrorSpeech": {
@@ -1213,8 +1271,9 @@
           "type": "string"
         },
         "serverTimeIntentParser": {
+          "description": "Time in milliseconds for server intent parsing",
           "minimum": 0,
-          "title": "Time in milliseconds for server intent parsing",
+          "title": "DEPRECATED",
           "type": "number"
         },
         "serverTimeSpeech": {
@@ -1250,6 +1309,19 @@
           "description": "This is the actual text the user spoke",
           "title": "Text utterance by user",
           "type": "string"
+        },
+        "utteranceChars": {
+          "title": "Number of characters in utterance",
+          "type": "number"
+        },
+        "utteranceDeepSpeech": {
+          "description": "An alternate transcription for verification",
+          "title": "Utterance as transcribed by DeepSpeech",
+          "type": "string"
+        },
+        "utteranceDeepSpeechChars": {
+          "title": "Number of characters in DeepSpeech transcription",
+          "type": "number"
         },
         "utteranceParsed": {
           "description": "Typically the slots found in the utterance",

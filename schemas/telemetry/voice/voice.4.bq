@@ -493,6 +493,23 @@
         "fields": [
           {
             "mode": "NULLABLE",
+            "name": "account_enabled",
+            "type": "BOOL"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "sync_enabled",
+            "type": "BOOL"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "services",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
             "name": "addon_compatibility_check_enabled",
             "type": "BOOL"
           },
@@ -716,6 +733,18 @@
             ],
             "mode": "NULLABLE",
             "name": "update",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "user_prefs",
             "type": "RECORD"
           }
         ],
@@ -1365,6 +1394,36 @@
     "fields": [
       {
         "mode": "NULLABLE",
+        "name": "audio_time",
+        "type": "INT64"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "country",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "deep_speech_confidence",
+        "type": "FLOAT64"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "deep_speech_matches",
+        "type": "BOOL"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "deep_speech_server_time",
+        "type": "INT64"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "extension_install_date",
+        "type": "INT64"
+      },
+      {
+        "mode": "NULLABLE",
         "name": "extension_installation_channel",
         "type": "STRING"
       },
@@ -1450,8 +1509,23 @@
       },
       {
         "mode": "NULLABLE",
+        "name": "intent_time",
+        "type": "INT64"
+      },
+      {
+        "mode": "NULLABLE",
         "name": "internal_error",
         "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "local_hour",
+        "type": "INT64"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "number_of_open_tabs",
+        "type": "INT64"
       },
       {
         "mode": "NULLABLE",
@@ -1502,6 +1576,21 @@
         "mode": "NULLABLE",
         "name": "utterance",
         "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "utterance_chars",
+        "type": "FLOAT64"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "utterance_deep_speech",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "utterance_deep_speech_chars",
+        "type": "FLOAT64"
       }
     ],
     "mode": "NULLABLE",
