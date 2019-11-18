@@ -101,6 +101,11 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "foreign_install",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "has_binary_components",
                     "type": "BOOL"
                   },
@@ -148,6 +153,16 @@
                     "mode": "NULLABLE",
                     "name": "update_day",
                     "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "user_disabled",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "version",
+                    "type": "STRING"
                   }
                 ],
                 "mode": "NULLABLE",
@@ -273,6 +288,11 @@
                 "mode": "NULLABLE",
                 "name": "description",
                 "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "foreign_install",
+                "type": "INT64"
               },
               {
                 "mode": "NULLABLE",
@@ -1397,6 +1417,25 @@
   },
   {
     "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "xpi",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "addon_details",
+        "type": "RECORD"
+      },
       {
         "fields": [
           {
@@ -44165,21 +44204,9 @@
               {
                 "fields": [
                   {
-                    "fields": [
-                      {
-                        "mode": "NULLABLE",
-                        "name": "key",
-                        "type": "STRING"
-                      },
-                      {
-                        "mode": "NULLABLE",
-                        "name": "value",
-                        "type": "INT64"
-                      }
-                    ],
-                    "mode": "REPEATED",
-                    "name": "telemetry_accumulate_unknown_histogram_keys",
-                    "type": "RECORD"
+                    "mode": "NULLABLE",
+                    "name": "key",
+                    "type": "STRING"
                   },
                   {
                     "fields": [
@@ -44191,15 +44218,15 @@
                       {
                         "mode": "NULLABLE",
                         "name": "value",
-                        "type": "INT64"
+                        "type": "STRING"
                       }
                     ],
                     "mode": "REPEATED",
-                    "name": "telemetry_event_counts",
+                    "name": "value",
                     "type": "RECORD"
                   }
                 ],
-                "mode": "NULLABLE",
+                "mode": "REPEATED",
                 "name": "keyed_scalars",
                 "type": "RECORD"
               },
@@ -44207,41 +44234,16 @@
                 "fields": [
                   {
                     "mode": "NULLABLE",
-                    "name": "browser_usage_graphite",
-                    "type": "INT64"
+                    "name": "key",
+                    "type": "STRING"
                   },
                   {
                     "mode": "NULLABLE",
-                    "name": "telemetry_discarded_accumulations",
-                    "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "telemetry_discarded_child_events",
-                    "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "telemetry_discarded_keyed_accumulations",
-                    "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "telemetry_discarded_keyed_scalar_actions",
-                    "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "telemetry_discarded_scalar_actions",
-                    "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "telemetry_profile_directory_scans",
-                    "type": "INT64"
+                    "name": "value",
+                    "type": "STRING"
                   }
                 ],
-                "mode": "NULLABLE",
+                "mode": "REPEATED",
                 "name": "scalars",
                 "type": "RECORD"
               }
@@ -47406,6 +47408,43 @@
         ],
         "mode": "NULLABLE",
         "name": "processes",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "active_ticks",
+            "type": "INT64"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "blank_window_shown",
+            "type": "INT64"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "first_paint",
+            "type": "INT64"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "main",
+            "type": "INT64"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "session_restored",
+            "type": "INT64"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "total_time",
+            "type": "INT64"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "simple_measurements",
         "type": "RECORD"
       },
       {
