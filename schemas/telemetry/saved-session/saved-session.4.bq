@@ -44205,9 +44205,21 @@
               {
                 "fields": [
                   {
-                    "mode": "NULLABLE",
-                    "name": "key",
-                    "type": "STRING"
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_accumulate_unknown_histogram_keys",
+                    "type": "RECORD"
                   },
                   {
                     "fields": [
@@ -44219,15 +44231,15 @@
                       {
                         "mode": "NULLABLE",
                         "name": "value",
-                        "type": "STRING"
+                        "type": "INT64"
                       }
                     ],
                     "mode": "REPEATED",
-                    "name": "value",
+                    "name": "telemetry_event_counts",
                     "type": "RECORD"
                   }
                 ],
-                "mode": "REPEATED",
+                "mode": "NULLABLE",
                 "name": "keyed_scalars",
                 "type": "RECORD"
               },
@@ -44235,16 +44247,41 @@
                 "fields": [
                   {
                     "mode": "NULLABLE",
-                    "name": "key",
-                    "type": "STRING"
+                    "name": "browser_usage_graphite",
+                    "type": "INT64"
                   },
                   {
                     "mode": "NULLABLE",
-                    "name": "value",
-                    "type": "STRING"
+                    "name": "telemetry_discarded_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_child_events",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_accumulations",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_keyed_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_discarded_scalar_actions",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "telemetry_profile_directory_scans",
+                    "type": "INT64"
                   }
                 ],
-                "mode": "REPEATED",
+                "mode": "NULLABLE",
                 "name": "scalars",
                 "type": "RECORD"
               }
