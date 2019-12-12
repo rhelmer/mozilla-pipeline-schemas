@@ -209,7 +209,7 @@
         "fields": [
           {
             "mode": "NULLABLE",
-            "name": "bookmarks_sync_outgoing_batches",
+            "name": "history_sync_outgoing_batches",
             "type": "INT64"
           }
         ],
@@ -221,12 +221,12 @@
         "fields": [
           {
             "mode": "NULLABLE",
-            "name": "bookmarks_sync_finished_at",
+            "name": "history_sync_finished_at",
             "type": "STRING"
           },
           {
             "mode": "NULLABLE",
-            "name": "bookmarks_sync_started_at",
+            "name": "history_sync_started_at",
             "type": "STRING"
           }
         ],
@@ -236,57 +236,6 @@
       },
       {
         "fields": [
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "INT64"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "bookmarks_sync_incoming",
-            "type": "RECORD"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "INT64"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "bookmarks_sync_outgoing",
-            "type": "RECORD"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "INT64"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "bookmarks_sync_remote_tree_problems",
-            "type": "RECORD"
-          },
           {
             "fields": [
               {
@@ -318,7 +267,58 @@
               }
             ],
             "mode": "REPEATED",
+            "name": "glean_error_invalid_state",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
             "name": "glean_error_invalid_value",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "history_sync_incoming",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "history_sync_outgoing",
             "type": "RECORD"
           }
         ],
@@ -342,7 +342,7 @@
               }
             ],
             "mode": "REPEATED",
-            "name": "bookmarks_sync_failure_reason",
+            "name": "history_sync_failure_reason",
             "type": "RECORD"
           }
         ],
@@ -354,7 +354,7 @@
         "fields": [
           {
             "mode": "NULLABLE",
-            "name": "bookmarks_sync_uid",
+            "name": "history_sync_uid",
             "type": "STRING"
           }
         ],

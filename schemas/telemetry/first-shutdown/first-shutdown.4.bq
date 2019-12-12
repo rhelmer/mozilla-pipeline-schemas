@@ -2566,6 +2566,16 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "crlite_faster_than_ocsp_ms",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "crlite_result",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "cryptominers_blocked_count",
             "type": "STRING"
           },
@@ -2792,6 +2802,11 @@
           {
             "mode": "NULLABLE",
             "name": "decoder_instantiated_macturkish",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "dedicated_worker_destroyed",
             "type": "STRING"
           },
           {
@@ -4012,6 +4027,11 @@
           {
             "mode": "NULLABLE",
             "name": "fx_new_window_ms",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "fx_number_of_unique_site_origins_all_tabs",
             "type": "STRING"
           },
           {
@@ -6176,6 +6196,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "ms_message_request_time_ms",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "narrate_content_speaktime_ms",
             "type": "STRING"
           },
@@ -6457,6 +6482,11 @@
           {
             "mode": "NULLABLE",
             "name": "number_of_profiles",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "ocsp_faster_than_crlite_ms",
             "type": "STRING"
           },
           {
@@ -7351,6 +7381,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "scroll_present_latency",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "search_reset_result",
             "type": "STRING"
           },
@@ -7431,6 +7466,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "service_worker_destroyed",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "service_worker_launch_time",
             "type": "STRING"
           },
@@ -7476,6 +7516,16 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "session_resumption_with_external_cache_time_until_ready_ms",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "session_resumption_with_internal_cache_time_until_ready_ms",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "shared_memory_ua_sheets_mapped_parent",
             "type": "STRING"
           },
@@ -7487,6 +7537,11 @@
           {
             "mode": "NULLABLE",
             "name": "shared_worker_count",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "shared_worker_destroyed",
             "type": "STRING"
           },
           {
@@ -22046,6 +22101,23 @@
               }
             ],
             "mode": "REPEATED",
+            "name": "qm_first_initialization_attempt",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
             "name": "qm_init_telemetry_error",
             "type": "RECORD"
           },
@@ -24361,6 +24433,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "decoder_instantiated_macturkish",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "dedicated_worker_destroyed",
                     "type": "STRING"
                   },
                   {
@@ -28725,6 +28802,11 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "service_worker_destroyed",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "service_worker_launch_time",
                     "type": "STRING"
                   },
@@ -28776,6 +28858,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "shared_worker_count",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "shared_worker_destroyed",
                     "type": "STRING"
                   },
                   {
@@ -43784,6 +43871,23 @@
                       }
                     ],
                     "mode": "REPEATED",
+                    "name": "telemetry_keyed_scalars_unknown_keys",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
                     "name": "webrtc_sdp_parser_diff",
                     "type": "RECORD"
                   },
@@ -44237,6 +44341,23 @@
                     "mode": "REPEATED",
                     "name": "telemetry_event_counts",
                     "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_keyed_scalars_unknown_keys",
+                    "type": "RECORD"
                   }
                 ],
                 "mode": "NULLABLE",
@@ -44423,6 +44544,23 @@
                     ],
                     "mode": "REPEATED",
                     "name": "telemetry_event_counts",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_keyed_scalars_unknown_keys",
                     "type": "RECORD"
                   }
                 ],
@@ -44916,6 +45054,23 @@
                     ],
                     "mode": "REPEATED",
                     "name": "telemetry_event_counts",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_keyed_scalars_unknown_keys",
                     "type": "RECORD"
                   }
                 ],
@@ -45983,6 +46138,23 @@
                       }
                     ],
                     "mode": "REPEATED",
+                    "name": "telemetry_keyed_scalars_unknown_keys",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
                     "name": "update_binarytransparencyresult",
                     "type": "RECORD"
                   },
@@ -46658,8 +46830,78 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "gfx_adapter_description",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_device_id",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_driver_date",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_driver_files",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_driver_vendor",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_driver_version",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_ram",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_subsystem_id",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_vendor_id",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_compositor",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_display_count",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_display_primary_height",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_display_primary_width",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "gfx_hdr_windows_display_colorspace_bitfield",
                     "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_headless",
+                    "type": "BOOL"
                   },
                   {
                     "mode": "NULLABLE",
@@ -47389,6 +47631,23 @@
                     ],
                     "mode": "REPEATED",
                     "name": "telemetry_event_counts",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "telemetry_keyed_scalars_unknown_keys",
                     "type": "RECORD"
                   }
                 ],

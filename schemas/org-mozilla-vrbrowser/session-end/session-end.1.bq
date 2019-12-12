@@ -209,44 +209,17 @@
         "fields": [
           {
             "mode": "NULLABLE",
-            "name": "firefox_account_bookmarks_sync_status",
-            "type": "BOOL"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "firefox_account_history_sync_status",
-            "type": "BOOL"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "glean_core_migration_successful",
-            "type": "BOOL"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "glean_error_preinit_tasks_timeout",
-            "type": "BOOL"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "boolean",
-        "type": "RECORD"
-      },
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "firefox_account_tab_sent",
+            "name": "tabs_activated",
             "type": "INT64"
           },
           {
             "mode": "NULLABLE",
-            "name": "glean_validation_app_forceclosed_count",
+            "name": "url_domains",
             "type": "INT64"
           },
           {
             "mode": "NULLABLE",
-            "name": "glean_validation_baseline_ping_count",
+            "name": "url_visits",
             "type": "INT64"
           }
         ],
@@ -256,23 +229,6 @@
       },
       {
         "fields": [
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "INT64"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "firefox_account_received_tab",
-            "type": "RECORD"
-          },
           {
             "fields": [
               {
@@ -338,24 +294,7 @@
               }
             ],
             "mode": "REPEATED",
-            "name": "searches_counts",
-            "type": "RECORD"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "INT64"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "url_query_type",
+            "name": "tabs_opened",
             "type": "RECORD"
           }
         ],
