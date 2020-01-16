@@ -924,6 +924,11 @@
               },
               {
                 "mode": "NULLABLE",
+                "name": "content_backend",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
                 "name": "d2d_enabled",
                 "type": "BOOL"
               },
@@ -3556,6 +3561,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "dns_trr_processing_time",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "dns_trr_race",
             "type": "STRING"
           },
@@ -4427,6 +4437,16 @@
           {
             "mode": "NULLABLE",
             "name": "fxa_configured",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "fxrpc_entry_method",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "fxrpc_ff_installation_from",
             "type": "STRING"
           },
           {
@@ -12696,7 +12716,27 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "use_counter2_css_property_overscroll_behavior_block_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_overscroll_behavior_block_page",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "use_counter2_css_property_overscroll_behavior_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_overscroll_behavior_inline_document",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_overscroll_behavior_inline_page",
             "type": "STRING"
           },
           {
@@ -33982,7 +34022,27 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_overscroll_behavior_block_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_overscroll_behavior_block_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "use_counter2_css_property_overscroll_behavior_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_overscroll_behavior_inline_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_overscroll_behavior_inline_page",
                     "type": "STRING"
                   },
                   {
@@ -45087,6 +45147,11 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "fxr_pc_is_first_run",
+                    "type": "BOOL"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "telemetry_discarded_accumulations",
                     "type": "INT64"
                   },
@@ -46250,6 +46315,11 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "a11y_sitezoom",
+                    "type": "BOOL"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "aushelper_websense_reg_version",
                     "type": "STRING"
                   },
@@ -46537,6 +46607,11 @@
                     "mode": "NULLABLE",
                     "name": "datasanitization_session_permission_exceptions",
                     "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "deletion_request_impression_id",
+                    "type": "STRING"
                   },
                   {
                     "mode": "NULLABLE",
@@ -46830,12 +46905,22 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "fxr_pc_is_first_run",
+                    "type": "BOOL"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "gfx_adapter_description",
                     "type": "STRING"
                   },
                   {
                     "mode": "NULLABLE",
                     "name": "gfx_adapter_device_id",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_adapter_device_id_last_seen",
                     "type": "STRING"
                   },
                   {
@@ -46876,6 +46961,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "gfx_compositor",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gfx_compositor_last_seen",
                     "type": "STRING"
                   },
                   {
@@ -47046,6 +47136,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "pdf_viewer_used",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "policies_count",
                     "type": "INT64"
                   },
                   {
@@ -47487,6 +47582,11 @@
                     "mode": "NULLABLE",
                     "name": "webrtc_peerconnection_promise_stats_used",
                     "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "widget_dark_mode",
+                    "type": "BOOL"
                   }
                 ],
                 "mode": "NULLABLE",

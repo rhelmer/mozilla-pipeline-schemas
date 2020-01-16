@@ -714,6 +714,9 @@
             },
             "gfx": {
               "properties": {
+                "ContentBackend": {
+                  "type": "string"
+                },
                 "D2DEnabled": {
                   "type": [
                     "boolean",
@@ -1141,7 +1144,6 @@
                       "items": {
                         "items": [
                           {
-                            "minimum": 0,
                             "type": "integer"
                           },
                           {

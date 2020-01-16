@@ -29,7 +29,10 @@
         "about:newtab",
         "about:home",
         "about:welcome",
-        "unknown"
+        "unknown",
+        "n/a",
+        "both",
+        "https://newtab.firefoxchina.cn/newtab/as/activity-stream.html"
       ],
       "type": "string"
     },

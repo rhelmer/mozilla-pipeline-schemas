@@ -1,4 +1,5 @@
 {
+  "$id": "moz://mozilla.org/schemas/main/ping/4",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "properties": {
     "application": {
@@ -714,6 +715,9 @@
             },
             "gfx": {
               "properties": {
+                "ContentBackend": {
+                  "type": "string"
+                },
                 "D2DEnabled": {
                   "type": [
                     "boolean",
@@ -1282,8 +1286,7 @@
               "type": "string"
             },
             "sessionLength": {
-              "description": "the session length until now in seconds, monotonic",
-              "minimum": 0,
+              "description": "the session length until now in seconds, monotonic; some clients report erroneous negative values",
               "type": [
                 "integer",
                 "null"
@@ -1422,7 +1425,6 @@
                   "items": {
                     "items": [
                       {
-                        "minimum": 0,
                         "type": "integer"
                       },
                       {
@@ -1714,7 +1716,6 @@
                   "items": {
                     "items": [
                       {
-                        "minimum": 0,
                         "type": "integer"
                       },
                       {
@@ -2006,7 +2007,6 @@
                   "items": {
                     "items": [
                       {
-                        "minimum": 0,
                         "type": "integer"
                       },
                       {
@@ -2298,7 +2298,6 @@
                   "items": {
                     "items": [
                       {
-                        "minimum": 0,
                         "type": "integer"
                       },
                       {
@@ -2590,7 +2589,6 @@
                   "items": {
                     "items": [
                       {
-                        "minimum": 0,
                         "type": "integer"
                       },
                       {
@@ -2885,7 +2883,6 @@
                   "items": {
                     "items": [
                       {
-                        "minimum": 0,
                         "type": "integer"
                       },
                       {
