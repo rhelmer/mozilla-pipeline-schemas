@@ -26,6 +26,7 @@
       "items": {
         "items": [
           {
+            "minimum": 0,
             "type": "integer"
           },
           {

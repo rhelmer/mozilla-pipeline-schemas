@@ -770,7 +770,7 @@
         },
         "ping_type": {
           "maxLength": 30,
-          "pattern": "^[a-z-_][a-z0-9-_]*$",
+          "pattern": "^[a-z_][a-z0-9_]*$",
           "type": "string"
         },
         "seq": {
