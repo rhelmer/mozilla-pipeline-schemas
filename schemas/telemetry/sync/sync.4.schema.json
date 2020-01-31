@@ -78,8 +78,17 @@
                   "null"
                 ]
               },
-              "version": {
+              "syncID": {
                 "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "version": {
+                "type": [
+                  "string",
+                  "null"
+                ]
               }
             },
             "type": "object"
