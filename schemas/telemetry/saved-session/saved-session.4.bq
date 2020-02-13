@@ -564,6 +564,12 @@
                 "type": "STRING"
               },
               {
+                "description": "derived user agent, see bug 1595063",
+                "mode": "NULLABLE",
+                "name": "ua",
+                "type": "STRING"
+              },
+              {
                 "description": "funnel experiment parameters, see bug 1567339",
                 "mode": "NULLABLE",
                 "name": "variation",
@@ -2268,6 +2274,11 @@
           {
             "mode": "NULLABLE",
             "name": "composite_frame_roundtrip_time",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "composite_swap_time",
             "type": "STRING"
           },
           {
@@ -20187,6 +20198,11 @@
           },
           {
             "mode": "NULLABLE",
+            "name": "window_remote_subframes_enabled_status",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
             "name": "wr_framebuild_time",
             "type": "STRING"
           },
@@ -21448,6 +21464,23 @@
             ],
             "mode": "REPEATED",
             "name": "hsts_priming_request_duration",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "http_cache_disposition_3",
             "type": "RECORD"
           },
           {
@@ -42551,6 +42584,23 @@
                       }
                     ],
                     "mode": "REPEATED",
+                    "name": "http_cache_disposition_3",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
                     "name": "http_child_omt_stats",
                     "type": "RECORD"
                   },
@@ -43868,6 +43918,23 @@
                     ],
                     "mode": "REPEATED",
                     "name": "dom_event_office_online_load_count",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "dom_ipc_rejected_window_actor_message",
                     "type": "RECORD"
                   },
                   {
@@ -45799,6 +45866,23 @@
                       }
                     ],
                     "mode": "REPEATED",
+                    "name": "dom_ipc_rejected_window_actor_message",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
                     "name": "extensions_updates_rdf",
                     "type": "RECORD"
                   },
@@ -46583,6 +46667,11 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "corroborate_omnijar_mismatch",
+                    "type": "BOOL"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "corroborate_system_addons_corrupted",
                     "type": "BOOL"
                   },
@@ -46948,6 +47037,16 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "gecko_build_id",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "gecko_version",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "gfx_adapter_description",
                     "type": "STRING"
                   },
@@ -47204,6 +47303,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "pwmgr_potentially_breached_passwords",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "qm_repositories_initialization_time",
                     "type": "INT64"
                   },
                   {
