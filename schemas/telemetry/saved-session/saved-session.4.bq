@@ -1452,6 +1452,25 @@
       {
         "fields": [
           {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "xpi",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "addon_details",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
             "mode": "NULLABLE",
             "name": "a11y_consumers",
             "type": "STRING"

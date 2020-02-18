@@ -745,6 +745,18 @@
             "mode": "NULLABLE",
             "name": "update",
             "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "user_prefs",
+            "type": "RECORD"
           }
         ],
         "mode": "NULLABLE",

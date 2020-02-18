@@ -235,6 +235,44 @@
     "type": "STRING"
   },
   {
+    "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "content",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "parent",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "scalars",
+        "type": "RECORD"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "payload",
+    "type": "RECORD"
+  },
+  {
     "description": "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99",
     "mode": "NULLABLE",
     "name": "sample_id",

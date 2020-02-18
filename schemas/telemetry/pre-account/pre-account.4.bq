@@ -329,6 +329,30 @@
         "type": "STRING"
       },
       {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "key",
+            "type": "STRING"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "value",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "REPEATED",
+        "name": "scalars",
+        "type": "RECORD"
+      },
+      {
         "mode": "NULLABLE",
         "name": "uid",
         "type": "STRING"
