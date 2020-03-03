@@ -327,18 +327,6 @@
         "fields": [
           {
             "mode": "NULLABLE",
-            "name": "key",
-            "type": "STRING"
-          }
-        ],
-        "mode": "REPEATED",
-        "name": "histograms",
-        "type": "RECORD"
-      },
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
             "name": "locale",
             "type": "STRING"
           },

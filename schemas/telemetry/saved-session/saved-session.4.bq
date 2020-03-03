@@ -1452,25 +1452,6 @@
       {
         "fields": [
           {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "xpi",
-            "type": "RECORD"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "addon_details",
-        "type": "RECORD"
-      },
-      {
-        "fields": [
-          {
             "mode": "NULLABLE",
             "name": "a11y_consumers",
             "type": "STRING"
@@ -2453,6 +2434,11 @@
           {
             "mode": "NULLABLE",
             "name": "cookie_leave_secure_alone",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "cookie_samesite_set_vs_unset",
             "type": "STRING"
           },
           {
@@ -45943,6 +45929,23 @@
                       }
                     ],
                     "mode": "REPEATED",
+                    "name": "browser_search_data_transferred",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
                     "name": "browser_search_with_ads",
                     "type": "RECORD"
                   },
@@ -46636,6 +46639,23 @@
                       {
                         "mode": "NULLABLE",
                         "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "urlbar_tips",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "mode": "NULLABLE",
+                        "name": "value",
                         "type": "BOOL"
                       }
                     ],
@@ -46873,6 +46893,36 @@
                     "mode": "NULLABLE",
                     "name": "browser_session_restore_worker_restart_count",
                     "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_startup_action",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_startup_average_time",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_startup_recorded_time",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_startup_slow_startup_notification_disabled",
+                    "type": "BOOL"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_startup_slow_startup_notified",
+                    "type": "BOOL"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "browser_startup_too_new_for_notification",
+                    "type": "BOOL"
                   },
                   {
                     "mode": "NULLABLE",
@@ -47702,6 +47752,11 @@
                   {
                     "mode": "NULLABLE",
                     "name": "timestamps_first_paint",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "timestamps_first_paint_two",
                     "type": "INT64"
                   },
                   {
