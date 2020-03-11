@@ -104,11 +104,6 @@
                     "type": "STRING"
                   },
                   {
-                    "mode": "NULLABLE",
-                    "name": "foreign_install",
-                    "type": "INT64"
-                  },
-                  {
                     "description": "True or false depending on whether the add-on has binary components. This is always false since Firefox 60. This field is only available after the 'sessionstore-windows-restored' topic is notified.",
                     "mode": "NULLABLE",
                     "name": "has_binary_components",
@@ -166,16 +161,6 @@
                     "mode": "NULLABLE",
                     "name": "update_day",
                     "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "user_disabled",
-                    "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "version",
-                    "type": "STRING"
                   }
                 ],
                 "mode": "NULLABLE",
@@ -304,11 +289,6 @@
                 "mode": "NULLABLE",
                 "name": "description",
                 "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "foreign_install",
-                "type": "INT64"
               },
               {
                 "description": "True or false depending on whether the theme has binary components. This is always false since Firefox 60.",
@@ -824,23 +804,6 @@
             "mode": "NULLABLE",
             "name": "update",
             "type": "RECORD"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "STRING"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "user_prefs",
-            "type": "RECORD"
           }
         ],
         "mode": "NULLABLE",
@@ -1317,6 +1280,7 @@
                 "type": "FLOAT64"
               },
               {
+                "description": "The version of the OS, e.g. '6.1'. This is `null` on failure.",
                 "mode": "NULLABLE",
                 "name": "version",
                 "type": "STRING"
@@ -1767,43 +1731,6 @@
         "mode": "NULLABLE",
         "name": "process_type",
         "type": "STRING"
-      },
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "active_ticks",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "blank_window_shown",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "first_paint",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "main",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "session_restored",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "total_time",
-            "type": "INT64"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "simple_measurements",
-        "type": "RECORD"
       },
       {
         "mode": "NULLABLE",
