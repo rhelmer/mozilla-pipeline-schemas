@@ -1769,43 +1769,6 @@
         "type": "STRING"
       },
       {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "active_ticks",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "blank_window_shown",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "first_paint",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "main",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "session_restored",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "total_time",
-            "type": "INT64"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "simple_measurements",
-        "type": "RECORD"
-      },
-      {
         "mode": "NULLABLE",
         "name": "version",
         "type": "INT64"

@@ -1543,41 +1543,44 @@
   {
     "fields": [
       {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "active_ticks",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "blank_window_shown",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "first_paint",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "main",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "session_restored",
-            "type": "INT64"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "total_time",
-            "type": "INT64"
-          }
-        ],
         "mode": "NULLABLE",
-        "name": "simple_measurements",
-        "type": "RECORD"
+        "name": "previous_build_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "previous_channel",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "previous_version",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "reason",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "target_build_id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "target_channel",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "target_display_version",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "target_version",
+        "type": "STRING"
       }
     ],
     "mode": "NULLABLE",
