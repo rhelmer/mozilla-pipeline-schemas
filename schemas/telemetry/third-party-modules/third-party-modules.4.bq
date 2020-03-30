@@ -974,6 +974,11 @@
                   },
                   {
                     "mode": "NULLABLE",
+                    "name": "driver_vendor",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
                     "name": "driver_version",
                     "type": "STRING"
                   },
@@ -1653,6 +1658,12 @@
                     "mode": "NULLABLE",
                     "name": "base_address",
                     "type": "STRING"
+                  },
+                  {
+                    "description": "True if the module is included in the executable's Import Directory Table.",
+                    "mode": "NULLABLE",
+                    "name": "is_dependent",
+                    "type": "BOOL"
                   },
                   {
                     "description": "Time spent loading this module, in milliseconds.",

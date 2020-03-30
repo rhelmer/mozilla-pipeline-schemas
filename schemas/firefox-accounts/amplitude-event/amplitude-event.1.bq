@@ -6,67 +6,9 @@
     "type": "STRING"
   },
   {
-    "mode": "NULLABLE",
-    "name": "addon_version",
-    "type": "STRING"
-  },
-  {
     "description": "The document ID specified in the URI when the client sent this message",
     "mode": "NULLABLE",
     "name": "document_id",
-    "type": "STRING"
-  },
-  {
-    "description": "An event identifier",
-    "mode": "NULLABLE",
-    "name": "event",
-    "type": "STRING"
-  },
-  {
-    "description": "A string that describes the context about this event",
-    "mode": "NULLABLE",
-    "name": "event_context",
-    "type": "STRING"
-  },
-  {
-    "description": "An object to record all active experiments, experiments IDs are stored as keys, and the value object stores the branch information. Example: {\"experiment_1\": {\"branch\": \"control\"}, \"experiment_2\": {\"branch\": \"treatment\"}}. This deprecates the \"shield_id\" used in activity-stream and messaging-system.",
-    "fields": [
-      {
-        "mode": "NULLABLE",
-        "name": "key",
-        "type": "STRING"
-      },
-      {
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "branch",
-            "type": "STRING"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "value",
-        "type": "RECORD"
-      }
-    ],
-    "mode": "REPEATED",
-    "name": "experiments",
-    "type": "RECORD"
-  },
-  {
-    "description": "A UUID representing this user. Note that it's not client_id, nor can it be used to link to a client_id",
-    "mode": "NULLABLE",
-    "name": "impression_id",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "locale",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "message_id",
     "type": "STRING"
   },
   {
@@ -198,13 +140,9 @@
     "type": "STRING"
   },
   {
+    "description": "Pre-existing Firefox Accounts metrics field used to identify Amplitude metrics events.",
     "mode": "NULLABLE",
-    "name": "profile_creation_date",
-    "type": "INT64"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "release_channel",
+    "name": "op",
     "type": "STRING"
   },
   {
@@ -214,20 +152,9 @@
     "type": "INT64"
   },
   {
-    "description": "[DEPRECATED]: use `experiments` instead. A semicolon separated string to store a list of Shield study IDs",
-    "mode": "NULLABLE",
-    "name": "shield_id",
-    "type": "STRING"
-  },
-  {
     "description": "Time when the ingestion edge server accepted this message",
     "mode": "NULLABLE",
     "name": "submission_timestamp",
     "type": "TIMESTAMP"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "version",
-    "type": "STRING"
   }
 ]
