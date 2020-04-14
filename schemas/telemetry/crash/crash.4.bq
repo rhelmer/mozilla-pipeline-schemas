@@ -1559,6 +1559,12 @@
         "type": "STRING"
       },
       {
+        "description": "<ISO Date>, time of crash. Per-hour resolution",
+        "mode": "NULLABLE",
+        "name": "crash_time",
+        "type": "STRING"
+      },
+      {
         "mode": "NULLABLE",
         "name": "has_crash_environment",
         "type": "BOOL"
@@ -1614,7 +1620,7 @@
             "type": "STRING"
           },
           {
-            "description": "<time>, Seconds since the Epoch",
+            "description": "<time>, Seconds since the Epoch (see also: `payload.crashTime`)",
             "mode": "NULLABLE",
             "name": "crash_time",
             "type": "STRING"
@@ -1710,7 +1716,7 @@
             "type": "STRING"
           },
           {
-            "description": "<id>, Active telemetry session ID when the crash was recorded",
+            "description": "Should not be in any pings, left in only for backwards compatibility - see `payload.sessionId` instead",
             "mode": "NULLABLE",
             "name": "telemetry_session_id",
             "type": "STRING"
@@ -1771,6 +1777,12 @@
       {
         "mode": "NULLABLE",
         "name": "process_type",
+        "type": "STRING"
+      },
+      {
+        "description": "<uuid>, Telemetry ID of crashing session. May be missing for crashes that happen early in startup",
+        "mode": "NULLABLE",
+        "name": "session_id",
         "type": "STRING"
       },
       {

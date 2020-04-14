@@ -297,6 +297,42 @@
         "mode": "NULLABLE",
         "name": "labeled_counter",
         "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "sync_failure_reason",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "labeled_string",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "sync_sync_uuid",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "uuid",
+        "type": "RECORD"
       }
     ],
     "mode": "NULLABLE",
