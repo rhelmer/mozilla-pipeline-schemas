@@ -92,6 +92,31 @@
               {
                 "fields": [
                   {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "fields": [
+                          {
+                            "description": "Cast into a boolean via mozilla-schema-generator. See bug 1611027.",
+                            "mode": "NULLABLE",
+                            "name": "apply_background_updates",
+                            "type": "BOOL"
+                          }
+                        ],
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "RECORD"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "active_gm_plugins",
+                    "type": "RECORD"
+                  },
+                  {
                     "description": "True if this add-on cannot be used in the application based on version compatibility, dependencies, and blocklisting. This field is only available after the 'sessionstore-windows-restored' topic is notified.",
                     "mode": "NULLABLE",
                     "name": "app_disabled",
