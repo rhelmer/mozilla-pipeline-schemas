@@ -1286,6 +1286,16 @@
           {
             "fields": [
               {
+                "mode": "NULLABLE",
+                "name": "has_prefetch",
+                "type": "BOOL"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "has_superfetch",
+                "type": "BOOL"
+              },
+              {
                 "description": "The year Windows was installed. This is Windows only. `null` on failure.",
                 "mode": "NULLABLE",
                 "name": "install_year",
@@ -4151,6 +4161,12 @@
             "description": "DNS: TRR parallel resolve racing results",
             "mode": "NULLABLE",
             "name": "dns_trr_race2",
+            "type": "STRING"
+          },
+          {
+            "description": "How often TRR (Trusted Recursive Resolver) requests are redirected",
+            "mode": "NULLABLE",
+            "name": "dns_trr_redirected",
             "type": "STRING"
           },
           {
@@ -24140,6 +24156,12 @@
             "type": "STRING"
           },
           {
+            "description": "Flag indicating consumer of non-standard outerWidth/outerHeight features in window.open",
+            "mode": "NULLABLE",
+            "name": "window_open_outer_size",
+            "type": "STRING"
+          },
+          {
             "description": "Fission enabled status of individual windows in fission.autostart and non-fission.autostart profiles",
             "mode": "NULLABLE",
             "name": "window_remote_subframes_enabled_status",
@@ -25572,6 +25594,24 @@
             ],
             "mode": "REPEATED",
             "name": "http_traffic_analysis_3",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "Time it takes for a request that has been upgraded with HTTPS-Only Mode to complete, broken down by top-level (top) / sub-resource (sub) and status",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "https_only_mode_upgrade_time_ms",
             "type": "RECORD"
           },
           {
@@ -49374,6 +49414,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Flag indicating consumer of non-standard outerWidth/outerHeight features in window.open",
+                    "mode": "NULLABLE",
+                    "name": "window_open_outer_size",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Whether XCTO: nosniff would allow/block an image load? (0=allow, 1=block)",
                     "mode": "NULLABLE",
                     "name": "xcto_nosniff_block_image",
@@ -54585,6 +54631,24 @@
                         "type": "STRING"
                       },
                       {
+                        "description": "A counter incremented every time the user encounters an error printing. The result is split into keys which represent the values of error codes related to printing. Possible values are listed in 'keys'. \"FAILURE\" is a catch-all code for an error we don't recognize.\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "printing_error",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
                         "description": "Keys are the filenames of unexpected files in the profile's origin directories.\n",
                         "mode": "NULLABLE",
                         "name": "value",
@@ -56013,6 +56077,18 @@
                     "type": "INT64"
                   },
                   {
+                    "description": "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations.",
+                    "mode": "NULLABLE",
+                    "name": "networking_loading_certs_task",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The time in milliseconds to initialize the NSS component in the parent process.",
+                    "mode": "NULLABLE",
+                    "name": "networking_nss_initialization",
+                    "type": "INT64"
+                  },
+                  {
                     "description": "Indicates that the process is lauched with Admin privileges but without UAC.\n",
                     "mode": "NULLABLE",
                     "name": "os_environment_is_admin_without_uac",
@@ -56103,6 +56179,12 @@
                     "type": "INT64"
                   },
                   {
+                    "description": "Measures user retention of the HTTPS-Only Mode. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled)\n",
+                    "mode": "NULLABLE",
+                    "name": "security_https_only_mode_enabled",
+                    "type": "INT64"
+                  },
+                  {
                     "description": "Number of intermediate certificates pending pre-load.\n",
                     "mode": "NULLABLE",
                     "name": "security_intermediate_preloading_num_pending",
@@ -56185,6 +56267,12 @@
                     "mode": "NULLABLE",
                     "name": "telemetry_ecosystem_old_send_time",
                     "type": "STRING"
+                  },
+                  {
+                    "description": "The number of times a late write stack failed to be parsed.\n",
+                    "mode": "NULLABLE",
+                    "name": "telemetry_failed_late_write",
+                    "type": "INT64"
                   },
                   {
                     "description": "Records true if there is a signal that Firefox was quitting because the OS was shutting down. Only available on Windows.\n",
@@ -56854,6 +56942,72 @@
         ],
         "mode": "NULLABLE",
         "name": "simple_measurements",
+        "type": "RECORD"
+      },
+      {
+        "description": "Slow SQL queries for both the main and other threads. The execution of an SQL statement is considered slow if it takes 50ms or more on the main thread or 100ms or more on other threads. Slow SQL statements will be automatically trimmed to 1000 characters.",
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f0_",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f1_",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "main_thread",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f0_",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "f1_",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "other_threads",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "slow_sql",
         "type": "RECORD"
       },
       {

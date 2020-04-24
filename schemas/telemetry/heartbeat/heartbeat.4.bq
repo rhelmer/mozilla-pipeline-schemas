@@ -1291,6 +1291,16 @@
           {
             "fields": [
               {
+                "mode": "NULLABLE",
+                "name": "has_prefetch",
+                "type": "BOOL"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "has_superfetch",
+                "type": "BOOL"
+              },
+              {
                 "description": "The year Windows was installed. This is Windows only. `null` on failure.",
                 "mode": "NULLABLE",
                 "name": "install_year",
