@@ -214,12 +214,6 @@
               {
                 "fields": [
                   {
-                    "description": "Cast into an integer via mozilla-schema-generator. See bug 1611027.",
-                    "mode": "NULLABLE",
-                    "name": "apply_background_updates",
-                    "type": "INT64"
-                  },
-                  {
                     "mode": "NULLABLE",
                     "name": "user_disabled",
                     "type": "BOOL"
@@ -1879,6 +1873,28 @@
           },
           {
             "fields": [
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "ip",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "module_index",
+                    "type": "INT64"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "trust",
+                    "type": "STRING"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "frames",
+                "type": "RECORD"
+              },
               {
                 "mode": "NULLABLE",
                 "name": "ip",

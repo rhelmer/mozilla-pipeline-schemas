@@ -214,12 +214,6 @@
               {
                 "fields": [
                   {
-                    "description": "Cast into an integer via mozilla-schema-generator. See bug 1611027.",
-                    "mode": "NULLABLE",
-                    "name": "apply_background_updates",
-                    "type": "INT64"
-                  },
-                  {
                     "mode": "NULLABLE",
                     "name": "user_disabled",
                     "type": "BOOL"
@@ -9189,6 +9183,12 @@
             "description": "SPDY: Streams created per connection",
             "mode": "NULLABLE",
             "name": "spdy_request_per_conn",
+            "type": "STRING"
+          },
+          {
+            "description": "SPDY: Streams created per connection",
+            "mode": "NULLABLE",
+            "name": "spdy_request_per_conn_2",
             "type": "STRING"
           },
           {
@@ -19950,6 +19950,18 @@
             "type": "STRING"
           },
           {
+            "description": "Whether a document called Document.mozSetImageElement",
+            "mode": "NULLABLE",
+            "name": "use_counter2_document_mozsetimageelement_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page called Document.mozSetImageElement",
+            "mode": "NULLABLE",
+            "name": "use_counter2_document_mozsetimageelement_page",
+            "type": "STRING"
+          },
+          {
             "description": "Whether a document calls document.open in a way that creates a new Window object",
             "mode": "NULLABLE",
             "name": "use_counter2_documentopen_document",
@@ -27321,6 +27333,12 @@
         "description": "This sections reports writes to the file system that happen during shutdown. The reported data contains the stack and the file names of the loaded libraries at the time the writes happened.",
         "fields": [
           {
+            "description": "Bug 1634520 - 1 if the late writes began in nsTerminator, 0 otherwise",
+            "mode": "NULLABLE",
+            "name": "is_from_terminator_watchdog",
+            "type": "INT64"
+          },
+          {
             "fields": [
               {
                 "mode": "REPEATED",
@@ -34537,6 +34555,12 @@
                     "description": "SPDY: Streams created per connection",
                     "mode": "NULLABLE",
                     "name": "spdy_request_per_conn",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "SPDY: Streams created per connection",
+                    "mode": "NULLABLE",
+                    "name": "spdy_request_per_conn_2",
                     "type": "STRING"
                   },
                   {
@@ -45256,6 +45280,18 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Whether a document called Document.mozSetImageElement",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_document_mozsetimageelement_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page called Document.mozSetImageElement",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_document_mozsetimageelement_page",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Whether a document calls document.open in a way that creates a new Window object",
                     "mode": "NULLABLE",
                     "name": "use_counter2_documentopen_document",
@@ -55456,6 +55492,12 @@
                     "description": "An identifier used by user interaction pings in Pocket/newtab and Messaging System.\n",
                     "mode": "NULLABLE",
                     "name": "deletion_request_impression_id",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "An identifier used by sync ping, to identify the current Firefox profile for a specific Account.\n",
+                    "mode": "NULLABLE",
+                    "name": "deletion_request_sync_device_id",
                     "type": "STRING"
                   },
                   {
