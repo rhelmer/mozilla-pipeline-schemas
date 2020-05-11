@@ -104,11 +104,6 @@
                     "type": "STRING"
                   },
                   {
-                    "mode": "NULLABLE",
-                    "name": "foreign_install",
-                    "type": "INT64"
-                  },
-                  {
                     "description": "True or false depending on whether the add-on has binary components. This is always false since Firefox 60. This field is only available after the 'sessionstore-windows-restored' topic is notified.",
                     "mode": "NULLABLE",
                     "name": "has_binary_components",
@@ -166,16 +161,6 @@
                     "mode": "NULLABLE",
                     "name": "update_day",
                     "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "user_disabled",
-                    "type": "INT64"
-                  },
-                  {
-                    "mode": "NULLABLE",
-                    "name": "version",
-                    "type": "STRING"
                   }
                 ],
                 "mode": "NULLABLE",
@@ -213,12 +198,6 @@
               },
               {
                 "fields": [
-                  {
-                    "description": "Cast into an integer via mozilla-schema-generator. See bug 1611027.",
-                    "mode": "NULLABLE",
-                    "name": "apply_background_updates",
-                    "type": "INT64"
-                  },
                   {
                     "mode": "NULLABLE",
                     "name": "user_disabled",
@@ -310,11 +289,6 @@
                 "mode": "NULLABLE",
                 "name": "description",
                 "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "foreign_install",
-                "type": "INT64"
               },
               {
                 "description": "True or false depending on whether the theme has binary components. This is always false since Firefox 60.",
@@ -830,23 +804,6 @@
             "mode": "NULLABLE",
             "name": "update",
             "type": "RECORD"
-          },
-          {
-            "fields": [
-              {
-                "mode": "NULLABLE",
-                "name": "key",
-                "type": "STRING"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "value",
-                "type": "STRING"
-              }
-            ],
-            "mode": "REPEATED",
-            "name": "user_prefs",
-            "type": "RECORD"
           }
         ],
         "mode": "NULLABLE",
@@ -1292,16 +1249,6 @@
           {
             "fields": [
               {
-                "mode": "NULLABLE",
-                "name": "has_prefetch",
-                "type": "BOOL"
-              },
-              {
-                "mode": "NULLABLE",
-                "name": "has_superfetch",
-                "type": "BOOL"
-              },
-              {
                 "description": "The year Windows was installed. This is Windows only. `null` on failure.",
                 "mode": "NULLABLE",
                 "name": "install_year",
@@ -1338,6 +1285,7 @@
                 "type": "FLOAT64"
               },
               {
+                "description": "The version of the OS, e.g. '6.1'. This is `null` on failure.",
                 "mode": "NULLABLE",
                 "name": "version",
                 "type": "STRING"
@@ -1474,6 +1422,34 @@
         ],
         "mode": "NULLABLE",
         "name": "header",
+        "type": "RECORD"
+      },
+      {
+        "description": "Components of the URI to which this ping was sent",
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "app_build_id",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "app_name",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "app_update_channel",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "app_version",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "uri",
         "type": "RECORD"
       },
       {
