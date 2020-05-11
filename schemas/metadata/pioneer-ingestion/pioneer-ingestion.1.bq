@@ -6,76 +6,9 @@
     "type": "STRING"
   },
   {
-    "fields": [
-      {
-        "mode": "NULLABLE",
-        "name": "architecture",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "build_id",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "channel",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "display_version",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "name",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "platform_version",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "vendor",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "version",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "xpcom_abi",
-        "type": "STRING"
-      }
-    ],
-    "mode": "NULLABLE",
-    "name": "application",
-    "type": "RECORD"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "client_id",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "creation_date",
-    "type": "STRING"
-  },
-  {
     "description": "The document ID specified in the URI when the client sent this message",
     "mode": "NULLABLE",
     "name": "document_id",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "id",
     "type": "STRING"
   },
   {
@@ -150,34 +83,6 @@
         "type": "RECORD"
       },
       {
-        "description": "Components of the URI to which this ping was sent",
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "app_build_id",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_name",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_update_channel",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_version",
-            "type": "STRING"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "uri",
-        "type": "RECORD"
-      },
-      {
         "description": "Parsed components of the client's user agent string",
         "fields": [
           {
@@ -235,31 +140,10 @@
     "type": "STRING"
   },
   {
-    "fields": [
-      {
-        "mode": "NULLABLE",
-        "name": "button",
-        "type": "FLOAT64"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "has_sync",
-        "type": "BOOL"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "last_build_id",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "last_version",
-        "type": "STRING"
-      }
-    ],
+    "description": "Custom pioneer id, must not be Telemetry clientId",
     "mode": "NULLABLE",
-    "name": "payload",
-    "type": "RECORD"
+    "name": "pioneer_id",
+    "type": "STRING"
   },
   {
     "description": "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99",
@@ -268,19 +152,15 @@
     "type": "INT64"
   },
   {
+    "description": "Name of a particular study. Usually the addon_id.",
+    "mode": "NULLABLE",
+    "name": "study_name",
+    "type": "STRING"
+  },
+  {
     "description": "Time when the ingestion edge server accepted this message",
     "mode": "NULLABLE",
     "name": "submission_timestamp",
     "type": "TIMESTAMP"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "type",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "version",
-    "type": "FLOAT64"
   }
 ]
