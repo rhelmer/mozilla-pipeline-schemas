@@ -219,6 +219,12 @@
               {
                 "fields": [
                   {
+                    "description": "Cast into an integer via mozilla-schema-generator. See bug 1611027.",
+                    "mode": "NULLABLE",
+                    "name": "apply_background_updates",
+                    "type": "INT64"
+                  },
+                  {
                     "mode": "NULLABLE",
                     "name": "user_disabled",
                     "type": "BOOL"
@@ -1473,34 +1479,6 @@
         ],
         "mode": "NULLABLE",
         "name": "header",
-        "type": "RECORD"
-      },
-      {
-        "description": "Components of the URI to which this ping was sent",
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "app_build_id",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_name",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_update_channel",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_version",
-            "type": "STRING"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "uri",
         "type": "RECORD"
       },
       {
