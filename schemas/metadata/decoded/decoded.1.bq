@@ -1,5 +1,11 @@
 [
   {
+    "description": "A JSON string containing any payload properties not present in the schema",
+    "mode": "NULLABLE",
+    "name": "additional_properties",
+    "type": "STRING"
+  },
+  {
     "mode": "NULLABLE",
     "name": "client_id",
     "type": "STRING"
@@ -12,21 +18,6 @@
   },
   {
     "fields": [
-      {
-        "mode": "NULLABLE",
-        "name": "document_namespace",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "document_type",
-        "type": "STRING"
-      },
-      {
-        "mode": "NULLABLE",
-        "name": "document_version",
-        "type": "STRING"
-      },
       {
         "description": "Results of a geographic lookup based on the client's IP address",
         "fields": [
@@ -94,34 +85,6 @@
         ],
         "mode": "NULLABLE",
         "name": "header",
-        "type": "RECORD"
-      },
-      {
-        "description": "Components of the URI to which this ping was sent",
-        "fields": [
-          {
-            "mode": "NULLABLE",
-            "name": "app_build_id",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_name",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_update_channel",
-            "type": "STRING"
-          },
-          {
-            "mode": "NULLABLE",
-            "name": "app_version",
-            "type": "STRING"
-          }
-        ],
-        "mode": "NULLABLE",
-        "name": "uri",
         "type": "RECORD"
       },
       {
