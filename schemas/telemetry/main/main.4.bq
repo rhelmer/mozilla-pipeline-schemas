@@ -1477,6 +1477,34 @@
         "type": "RECORD"
       },
       {
+        "description": "Components of the URI to which this ping was sent",
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "app_build_id",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "app_name",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "app_update_channel",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "app_version",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "uri",
+        "type": "RECORD"
+      },
+      {
         "description": "Parsed components of the client's user agent string",
         "fields": [
           {
@@ -8978,9 +9006,15 @@
             "type": "STRING"
           },
           {
-            "description": "Whether the parent process successfully re-mapped the User Agent style sheet shared memory buffer at the desired address after freezing it",
+            "description": "Whether the parent process successfully mapped the User Agent style sheet shared memory buffer at the desired address",
             "mode": "NULLABLE",
             "name": "shared_memory_ua_sheets_mapped_parent_after_freeze",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether the parent process failed to convert User Agent style sheets into a form suitable for storing in shared memory",
+            "mode": "NULLABLE",
+            "name": "shared_memory_ua_sheets_toshmem_succeeded",
             "type": "STRING"
           },
           {
