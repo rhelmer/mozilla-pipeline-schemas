@@ -1477,6 +1477,32 @@
         "type": "RECORD"
       },
       {
+        "description": "Results of ISP lookup based on the client's IP address",
+        "fields": [
+          {
+            "description": "The specific geo ISP database version used for this lookup",
+            "mode": "NULLABLE",
+            "name": "db_version",
+            "type": "STRING"
+          },
+          {
+            "description": "The name of the ISP associated with the client's IP address",
+            "mode": "NULLABLE",
+            "name": "name",
+            "type": "STRING"
+          },
+          {
+            "description": "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name",
+            "mode": "NULLABLE",
+            "name": "organization",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "isp",
+        "type": "RECORD"
+      },
+      {
         "description": "Components of the URI to which this ping was sent",
         "fields": [
           {
@@ -2760,6 +2786,36 @@
             "type": "STRING"
           },
           {
+            "description": "Time spent per daily cookie purging activity, in milliseconds. This measures the time for all batch iterations of that day.",
+            "mode": "NULLABLE",
+            "name": "cookie_purging_duration_ms",
+            "type": "STRING"
+          },
+          {
+            "description": "How much time (in hours) passed between the current cookie purging activity and the one before that (cookie purging is run on 'daily idle')",
+            "mode": "NULLABLE",
+            "name": "cookie_purging_interval_hours",
+            "type": "STRING"
+          },
+          {
+            "description": "The number of origins that were purged during one run of cookie purging.",
+            "mode": "NULLABLE",
+            "name": "cookie_purging_origins_purged",
+            "type": "STRING"
+          },
+          {
+            "description": "The time remaining until expiration per user interaction permissions of trackers at the time of purging, in days (one record per tracker, not averaged).",
+            "mode": "NULLABLE",
+            "name": "cookie_purging_trackers_user_interaction_remaining_days",
+            "type": "STRING"
+          },
+          {
+            "description": "The number of trackers that had user interaction at the time of purging.",
+            "mode": "NULLABLE",
+            "name": "cookie_purging_trackers_with_user_interaction",
+            "type": "STRING"
+          },
+          {
             "description": "Cookies with SameSite attribute set vs unset",
             "mode": "NULLABLE",
             "name": "cookie_samesite_set_vs_unset",
@@ -3375,6 +3431,18 @@
             "description": "How long has the Changes panel been active (seconds)",
             "mode": "NULLABLE",
             "name": "devtools_changesview_time_active_seconds",
+            "type": "STRING"
+          },
+          {
+            "description": "Number of times the DevTools Compatibility View has been opened.",
+            "mode": "NULLABLE",
+            "name": "devtools_compatibilityview_opened_count",
+            "type": "STRING"
+          },
+          {
+            "description": "How long has the compatibility view been active (seconds)",
+            "mode": "NULLABLE",
+            "name": "devtools_compatibilityview_time_active_seconds",
             "type": "STRING"
           },
           {
@@ -4764,6 +4832,12 @@
             "type": "STRING"
           },
           {
+            "description": "When a document is unloaded, report the highest number of site origins loaded simultaneously in that document.",
+            "mode": "NULLABLE",
+            "name": "fx_number_of_unique_site_origins_per_document",
+            "type": "STRING"
+          },
+          {
             "description": "Count how many times people add items to the url bar",
             "mode": "NULLABLE",
             "name": "fx_page_action_added",
@@ -5232,6 +5306,12 @@
             "type": "STRING"
           },
           {
+            "description": "Firefox: The type of the selected result in the URL bar popup. See BrowserUsageTelemetry.jsm:URLBAR_SELECTED_RESULT_TYPES for the result types.",
+            "mode": "NULLABLE",
+            "name": "fx_urlbar_selected_result_type_2",
+            "type": "STRING"
+          },
+          {
             "description": "If the user is signed in to a Firefox Account on this device. Recorded once per session just after startup as Sync is initialized.",
             "mode": "NULLABLE",
             "name": "fxa_configured",
@@ -5259,6 +5339,12 @@
             "description": "Requested GC slice budget (ms)",
             "mode": "NULLABLE",
             "name": "gc_budget_ms",
+            "type": "STRING"
+          },
+          {
+            "description": "Requested GC slice budget (ms)",
+            "mode": "NULLABLE",
+            "name": "gc_budget_ms_2",
             "type": "STRING"
           },
           {
@@ -5304,6 +5390,12 @@
             "type": "STRING"
           },
           {
+            "description": "Time spent marking gray GC objects (ms)",
+            "mode": "NULLABLE",
+            "name": "gc_mark_gray_ms_2",
+            "type": "STRING"
+          },
+          {
             "description": "Time spent running JS GC mark phase (ms)",
             "mode": "NULLABLE",
             "name": "gc_mark_ms",
@@ -5316,9 +5408,27 @@
             "type": "STRING"
           },
           {
+            "description": "The number of objects marked per ms during GC.",
+            "mode": "NULLABLE",
+            "name": "gc_mark_rate_2",
+            "type": "STRING"
+          },
+          {
             "description": "Time spent marking GC roots (ms)",
             "mode": "NULLABLE",
             "name": "gc_mark_roots_ms",
+            "type": "STRING"
+          },
+          {
+            "description": "Time spent marking GC roots (us)",
+            "mode": "NULLABLE",
+            "name": "gc_mark_roots_us",
+            "type": "STRING"
+          },
+          {
+            "description": "Time spent marking GC objects held live through weakmaps (ms)",
+            "mode": "NULLABLE",
+            "name": "gc_mark_weak_ms",
             "type": "STRING"
           },
           {
@@ -5394,9 +5504,21 @@
             "type": "STRING"
           },
           {
+            "description": "Time spent running JS GC preparation phase (ms)",
+            "mode": "NULLABLE",
+            "name": "gc_prepare_ms",
+            "type": "STRING"
+          },
+          {
             "description": "How many objects groups were selected for pretenuring by a minor GC",
             "mode": "NULLABLE",
             "name": "gc_pretenure_count",
+            "type": "STRING"
+          },
+          {
+            "description": "How many objects groups were selected for pretenuring by a minor GC",
+            "mode": "NULLABLE",
+            "name": "gc_pretenure_count_2",
             "type": "STRING"
           },
           {
@@ -5619,6 +5741,12 @@
             "description": "Reports why a graphics sanity test was run. 0=First Run, 1=App Updated, 2=Device Change, 3=Driver Change, 4=Advanced Layers Config Change.",
             "mode": "NULLABLE",
             "name": "graphics_sanity_test_reason",
+            "type": "STRING"
+          },
+          {
+            "description": "GeckoView: The uptime of content processes in ms",
+            "mode": "NULLABLE",
+            "name": "gv_content_process_lifetime_ms",
             "type": "STRING"
           },
           {
@@ -6678,6 +6806,12 @@
             "type": "STRING"
           },
           {
+            "description": "Number of fully loaded (i.e., not pending from session restore) tabs opened across all windows, collected at most every 5 minutes whenever the user interacts with the browser in the following ways: open tab/window, page load, restoring a pending tab.",
+            "mode": "NULLABLE",
+            "name": "loaded_tab_count",
+            "type": "STRING"
+          },
+          {
             "description": "Time to block before we clear LocalStorage for all domains (ms)",
             "mode": "NULLABLE",
             "name": "localdomstorage_clear_blocking_ms",
@@ -6822,7 +6956,7 @@
             "type": "STRING"
           },
           {
-            "description": "Reports a true value when a page requests canPlayType for an HTTP Live Streaming media type (or generic m3u playlist).",
+            "description": "Reports a true value when a page requests canPlayType for a HLS media type.",
             "mode": "NULLABLE",
             "name": "media_hls_canplay_requested",
             "type": "STRING"
@@ -7860,6 +7994,12 @@
             "type": "STRING"
           },
           {
+            "description": "The reason the fallback bar was shown.",
+            "mode": "NULLABLE",
+            "name": "pdf_viewer_fallback_reason",
+            "type": "STRING"
+          },
+          {
             "description": "How many times PDF Viewer fallback bar was shown",
             "mode": "NULLABLE",
             "name": "pdf_viewer_fallback_shown",
@@ -8664,7 +8804,7 @@
             "type": "STRING"
           },
           {
-            "description": "Action taken by user through prompt for modifying a login. (0=Prompt displayed [always recorded], 1=Update login)",
+            "description": "Action taken by user through prompt for modifying a login. (0=Prompt displayed [always recorded], 1=Update login, 2=Don't update, 3=Remove saved login)",
             "mode": "NULLABLE",
             "name": "pwmgr_prompt_update_action",
             "type": "STRING"
@@ -9252,7 +9392,7 @@
             "type": "STRING"
           },
           {
-            "description": "SSL Authentication Algorithm (null=0, rsa=1, dsa=2, ecdsa=4) in full handshake",
+            "description": "SSL Authentication Algorithm (null=0, rsa(KEA)=1, ecdsa=4, rsa(sign)=7) in full handshake",
             "mode": "NULLABLE",
             "name": "ssl_auth_algorithm_full",
             "type": "STRING"
@@ -9348,7 +9488,7 @@
             "type": "STRING"
           },
           {
-            "description": "ECDHE KEA (TLS_ECDHE_*) curve (23=P-256, 24=P-384, 25=P-521) in full handshake",
+            "description": "ECDHE KEA (TLS_ECDHE_*) curve (23=P-256, 24=P-384, 25=P-521, 29=Curve25519) in full handshake",
             "mode": "NULLABLE",
             "name": "ssl_kea_ecdhe_curve_full",
             "type": "STRING"
@@ -24186,6 +24326,24 @@
             "type": "STRING"
           },
           {
+            "description": "Determine what API users use to enter the web immersive mode.",
+            "mode": "NULLABLE",
+            "name": "webxr_api_mode",
+            "type": "STRING"
+          },
+          {
+            "description": "Action triggered by wheel event (WheelPrefs::Action)",
+            "mode": "NULLABLE",
+            "name": "wheel_action",
+            "type": "STRING"
+          },
+          {
+            "description": "Keyboard modifier key applied to wheel events (WheelPrefs::Index)",
+            "mode": "NULLABLE",
+            "name": "wheel_index",
+            "type": "STRING"
+          },
+          {
             "description": "Flag indicating consumer of non-standard outerWidth/outerHeight features in window.open",
             "mode": "NULLABLE",
             "name": "window_open_outer_size",
@@ -25022,6 +25180,132 @@
                 "type": "STRING"
               },
               {
+                "description": "DNS: lookup algorithm; Keyed by TRR auto-detected",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "dns_lookup_disposition2",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "DNS check for TRR was blocked by blacklist; Keyed by TRR auto-detected",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "dns_trr_blacklisted2",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "Resolve success rate when in TRR-first and called TRR-disabled (fall-back mode); Keyed by TRR auto-detected",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "dns_trr_disabled2",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "TRR-first mode distribution. 0=Worked, 1=fell back fine after TRR fail, 2=native worked, 3=both failed; Keyed by TRR auto-detected",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "dns_trr_first3",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "Time for a completed TRR resolution (msec); Keyed by TRR auto-detected",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "dns_trr_lookup_time2",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "TRR managed to verify NS entry; Keyed by TRR auto-detected",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "dns_trr_ns_verfified2",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "How often TRR (Trusted Recursive Resolver) requests are fine, time-out or error. Keyed by TRR auto-detected",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "dns_trr_success2",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
                 "description": "Note the encoding (e.g. 'UTF-8', 'windows-1252', 'ASCII') of each external <script> element that is successfully loaded and decoded.",
                 "mode": "NULLABLE",
                 "name": "value",
@@ -25516,6 +25800,24 @@
             ],
             "mode": "REPEATED",
             "name": "fx_urlbar_selected_result_index_by_type",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "Firefox: The index of the selected result in the URL bar popup by the type of the selected result in the URL bar popup. See BrowserUsageTelemetry.jsm:URLBAR_SELECTED_RESULT_TYPES for the result types.",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "fx_urlbar_selected_result_index_by_type_2",
             "type": "RECORD"
           },
           {
@@ -26038,6 +26340,24 @@
             ],
             "mode": "REPEATED",
             "name": "opengl_compositing_failure_id",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "description": "Page load errors. Match values with type of error in nsDocShellTelemetryUtils.cpp",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "page_load_error",
             "type": "RECORD"
           },
           {
@@ -29146,6 +29466,18 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Number of times the DevTools Compatibility View has been opened.",
+                    "mode": "NULLABLE",
+                    "name": "devtools_compatibilityview_opened_count",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "How long has the compatibility view been active (seconds)",
+                    "mode": "NULLABLE",
+                    "name": "devtools_compatibilityview_time_active_seconds",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Number of times the DevTools Computed View has been opened.",
                     "mode": "NULLABLE",
                     "name": "devtools_computedview_opened_count",
@@ -30814,6 +31146,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Firefox: The type of the selected result in the URL bar popup. See BrowserUsageTelemetry.jsm:URLBAR_SELECTED_RESULT_TYPES for the result types.",
+                    "mode": "NULLABLE",
+                    "name": "fx_urlbar_selected_result_type_2",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "If the user is signed in to a Firefox Account on this device. Recorded once per session just after startup as Sync is initialized.",
                     "mode": "NULLABLE",
                     "name": "fxa_configured",
@@ -30829,6 +31167,12 @@
                     "description": "Requested GC slice budget (ms)",
                     "mode": "NULLABLE",
                     "name": "gc_budget_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Requested GC slice budget (ms)",
+                    "mode": "NULLABLE",
+                    "name": "gc_budget_ms_2",
                     "type": "STRING"
                   },
                   {
@@ -30874,6 +31218,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Time spent marking gray GC objects (ms)",
+                    "mode": "NULLABLE",
+                    "name": "gc_mark_gray_ms_2",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Time spent running JS GC mark phase (ms)",
                     "mode": "NULLABLE",
                     "name": "gc_mark_ms",
@@ -30886,9 +31236,27 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "The number of objects marked per ms during GC.",
+                    "mode": "NULLABLE",
+                    "name": "gc_mark_rate_2",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Time spent marking GC roots (ms)",
                     "mode": "NULLABLE",
                     "name": "gc_mark_roots_ms",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Time spent marking GC roots (us)",
+                    "mode": "NULLABLE",
+                    "name": "gc_mark_roots_us",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Time spent marking GC objects held live through weakmaps (ms)",
+                    "mode": "NULLABLE",
+                    "name": "gc_mark_weak_ms",
                     "type": "STRING"
                   },
                   {
@@ -30964,9 +31332,21 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Time spent running JS GC preparation phase (ms)",
+                    "mode": "NULLABLE",
+                    "name": "gc_prepare_ms",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "How many objects groups were selected for pretenuring by a minor GC",
                     "mode": "NULLABLE",
                     "name": "gc_pretenure_count",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "How many objects groups were selected for pretenuring by a minor GC",
+                    "mode": "NULLABLE",
+                    "name": "gc_pretenure_count_2",
                     "type": "STRING"
                   },
                   {
@@ -32404,9 +32784,15 @@
                     "type": "STRING"
                   },
                   {
-                    "description": "Reports a true value when a page requests canPlayType for an HTTP Live Streaming media type (or generic m3u playlist).",
+                    "description": "Reports a true value when a page requests canPlayType for a HLS media type.",
                     "mode": "NULLABLE",
                     "name": "media_hls_canplay_requested",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Reports a true value when a canPlayType request supports HLS.",
+                    "mode": "NULLABLE",
+                    "name": "media_hls_canplay_supported",
                     "type": "STRING"
                   },
                   {
@@ -33334,6 +33720,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "The reason the fallback bar was shown.",
+                    "mode": "NULLABLE",
+                    "name": "pdf_viewer_fallback_reason",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "How many times PDF Viewer fallback bar was shown",
                     "mode": "NULLABLE",
                     "name": "pdf_viewer_fallback_shown",
@@ -34084,7 +34476,7 @@
                     "type": "STRING"
                   },
                   {
-                    "description": "Action taken by user through prompt for modifying a login. (0=Prompt displayed [always recorded], 1=Update login)",
+                    "description": "Action taken by user through prompt for modifying a login. (0=Prompt displayed [always recorded], 1=Update login, 2=Don't update, 3=Remove saved login)",
                     "mode": "NULLABLE",
                     "name": "pwmgr_prompt_update_action",
                     "type": "STRING"
@@ -34624,7 +35016,7 @@
                     "type": "STRING"
                   },
                   {
-                    "description": "SSL Authentication Algorithm (null=0, rsa=1, dsa=2, ecdsa=4) in full handshake",
+                    "description": "SSL Authentication Algorithm (null=0, rsa(KEA)=1, ecdsa=4, rsa(sign)=7) in full handshake",
                     "mode": "NULLABLE",
                     "name": "ssl_auth_algorithm_full",
                     "type": "STRING"
@@ -34720,7 +35112,7 @@
                     "type": "STRING"
                   },
                   {
-                    "description": "ECDHE KEA (TLS_ECDHE_*) curve (23=P-256, 24=P-384, 25=P-521) in full handshake",
+                    "description": "ECDHE KEA (TLS_ECDHE_*) curve (23=P-256, 24=P-384, 25=P-521, 29=Curve25519) in full handshake",
                     "mode": "NULLABLE",
                     "name": "ssl_kea_ecdhe_curve_full",
                     "type": "STRING"
@@ -49468,6 +49860,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Determine what API users use to enter the web immersive mode.",
+                    "mode": "NULLABLE",
+                    "name": "webxr_api_mode",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Flag indicating consumer of non-standard outerWidth/outerHeight features in window.open",
                     "mode": "NULLABLE",
                     "name": "window_open_outer_size",
@@ -50598,6 +50996,24 @@
                         "type": "STRING"
                       },
                       {
+                        "description": "Firefox: The index of the selected result in the URL bar popup by the type of the selected result in the URL bar popup. See BrowserUsageTelemetry.jsm:URLBAR_SELECTED_RESULT_TYPES for the result types.",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "fx_urlbar_selected_result_index_by_type_2",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
                         "description": "The amount of time required for HSTS priming requests (ms), keyed by success or failure of the priming request. (success, failure)",
                         "mode": "NULLABLE",
                         "name": "value",
@@ -50912,6 +51328,24 @@
                     ],
                     "mode": "REPEATED",
                     "name": "opengl_compositing_failure_id",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Page load errors. Match values with type of error in nsDocShellTelemetryUtils.cpp",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "page_load_error",
                     "type": "RECORD"
                   },
                   {
@@ -54973,6 +55407,24 @@
                         "type": "STRING"
                       },
                       {
+                        "description": "A counter incremented every time a user uses the Unknown Content Type dialog for PDF files, with counts grouped by action chosen (see keys). Some external applications that have very high adoption are counted specifically. Note: 'OPEN_WITH_SYSTEM_DEFAULT' may eventually resolve to one of Acrobat, Foxit, MsEdge, Chromium, etc.\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "unknowncontenttype_pdf_action",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
                         "description": "If the binary transparency information for an update does not verify successfully, this probe will contain an error code from toolkit/mozapps/update/common/updatererrors.h indicating why.\n",
                         "mode": "NULLABLE",
                         "name": "value",
@@ -55117,6 +55569,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated (as a datetime string in UTC format), set to \"Missing Date\" when the timestamp couldn't be retrieved.\n",
+                    "mode": "NULLABLE",
+                    "name": "blocklist_last_modified_rs_addons_mlbf",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Keep track of the last time the \"plugins\" remotesetting blocklist has been successfully updated (as a datetime string in UTC format), set to \"Missing Date\" when the timestamp couldn't be retrieved.\n",
                     "mode": "NULLABLE",
                     "name": "blocklist_last_modified_rs_plugins",
@@ -55127,6 +55585,36 @@
                     "mode": "NULLABLE",
                     "name": "blocklist_last_modified_xml",
                     "type": "STRING"
+                  },
+                  {
+                    "description": "Keep track of whether the addons blocklist engine uses bloom filters (blocklist v3). If false, the blocklist v2 is used instead.\n",
+                    "mode": "NULLABLE",
+                    "name": "blocklist_mlbf_enabled",
+                    "type": "BOOL"
+                  },
+                  {
+                    "description": "Keep track of the generation time of the addon blocklist's bloom filter. This marks the point in time until which signed add-ons are recognized by the selected bloom filter from the addons-bloomfilters collection. The value is a datetime string in UTC format, or  \"Missing Date\" when unavailable.\n",
+                    "mode": "NULLABLE",
+                    "name": "blocklist_mlbf_generation_time",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled and mlbf_stashes are true. The value is a datetime string in UTC format, or \"Missing Date\" when unavailable.\n",
+                    "mode": "NULLABLE",
+                    "name": "blocklist_mlbf_stash_time_newest",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled and mlbf_stashes are true. The value is a datetime string in UTC format, or \"Missing Date\" when unavailable.\n",
+                    "mode": "NULLABLE",
+                    "name": "blocklist_mlbf_stash_time_oldest",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Keep track of whether the bloomfilter-based blocklist engine uses stashes from the addons-bloomfilters collection, together with an infrequently updated base bloomfilter. If false, the latest (full) bloom filter is downloaded on every update of the addon blocklist. This metric is only meaningful if mlbf_enabled is true.\n",
+                    "mode": "NULLABLE",
+                    "name": "blocklist_mlbf_stashes",
+                    "type": "BOOL"
                   },
                   {
                     "description": "Keep track of the currently enabled blocklist engine (set to false if the remote settings blocklist is the one enabled).\n",
@@ -56081,6 +56569,12 @@
                     "mode": "NULLABLE",
                     "name": "mediarecorder_recording_count",
                     "type": "INT64"
+                  },
+                  {
+                    "description": "Set when a profile refresh is initiated from the uninstaller.\n",
+                    "mode": "NULLABLE",
+                    "name": "migration_uninstaller_profile_refresh",
+                    "type": "BOOL"
                   },
                   {
                     "description": "Number of times navigator.storage.estimate has been used.\n",

@@ -1477,6 +1477,32 @@
         "type": "RECORD"
       },
       {
+        "description": "Results of ISP lookup based on the client's IP address",
+        "fields": [
+          {
+            "description": "The specific geo ISP database version used for this lookup",
+            "mode": "NULLABLE",
+            "name": "db_version",
+            "type": "STRING"
+          },
+          {
+            "description": "The name of the ISP associated with the client's IP address",
+            "mode": "NULLABLE",
+            "name": "name",
+            "type": "STRING"
+          },
+          {
+            "description": "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name",
+            "mode": "NULLABLE",
+            "name": "organization",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "isp",
+        "type": "RECORD"
+      },
+      {
         "description": "Components of the URI to which this ping was sent",
         "fields": [
           {
@@ -1563,6 +1589,33 @@
   },
   {
     "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "description": "How the profile was selected during startup. One of the following reasons:\n  unknown:\n    Generally should not happen, set as a default in case no other reason\n    occured.\n  profile-manager:\n    The profile was selected by the profile manager.\n  profile-reset:\n    The profile was selected for reset, normally this would mean a restart.\n  restart:\n    The user restarted the application, the same profile as previous will\n    be used.\n  argument-profile:\n    The profile was selected by the --profile command line argument.\n  argument-p:\n    The profile was selected by the -p command line argument.\n  firstrun-claimed-default:\n    A first run of a dedicated profiles build chose the old default\n    profile to be the default for this install.\n  firstrun-skipped-default:\n    A first run of a dedicated profiles build skipped over the old default\n    profile and created a new profile.\n  restart-claimed-default:\n    A first run of a dedicated profiles build after a restart chose the\n    old defaul…",
+                    "mode": "NULLABLE",
+                    "name": "startup_profile_selection_reason",
+                    "type": "STRING"
+                  }
+                ],
+                "mode": "NULLABLE",
+                "name": "scalars",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "NULLABLE",
+            "name": "parent",
+            "type": "RECORD"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "processes",
+        "type": "RECORD"
+      },
       {
         "mode": "NULLABLE",
         "name": "reason",
