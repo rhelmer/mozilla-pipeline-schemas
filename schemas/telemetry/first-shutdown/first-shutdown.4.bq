@@ -1126,6 +1126,18 @@
                       }
                     ],
                     "mode": "NULLABLE",
+                    "name": "hw_compositing",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "status",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "NULLABLE",
                     "name": "webrender",
                     "type": "RECORD"
                   },
@@ -1751,6 +1763,12 @@
             "description": "The percentage of pages with a mousemove listener anywhere in the document that would disable APZ key scrolling. This is tracked for non system principal windows, so it applies to toplevel windows and subframes/iframes, but not chrome windows.",
             "mode": "NULLABLE",
             "name": "apz_aware_mousemove_listeners",
+            "type": "STRING"
+          },
+          {
+            "description": "Input device that triggered the zoom gesture (InputData::PinchGestureSource)",
+            "mode": "NULLABLE",
+            "name": "apz_zoom_pinchsource",
             "type": "STRING"
           },
           {
@@ -7994,6 +8012,12 @@
             "type": "STRING"
           },
           {
+            "description": "All errors that could trigger the fallback bar, even after the bar is shown.",
+            "mode": "NULLABLE",
+            "name": "pdf_viewer_fallback_error",
+            "type": "STRING"
+          },
+          {
             "description": "The reason the fallback bar was shown.",
             "mode": "NULLABLE",
             "name": "pdf_viewer_fallback_reason",
@@ -8861,6 +8885,12 @@
             "description": "Total time spent ticking the refresh driver in milliseconds",
             "mode": "NULLABLE",
             "name": "refresh_driver_tick",
+            "type": "STRING"
+          },
+          {
+            "description": "The distance(m) between the the result of 2 services that detect the users location",
+            "mode": "NULLABLE",
+            "name": "region_location_services_difference",
             "type": "STRING"
           },
           {
@@ -10919,6 +10949,678 @@
             "description": "Whether or not the metadata for a variable-length prefix set loaded from disk is corrupted (true = file corrupted).",
             "mode": "NULLABLE",
             "name": "urlclassifier_vlps_metadata_corrupt",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to button on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_button_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to button on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_button_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to checkbox on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_checkbox_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to checkbox on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_checkbox_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to inner-spin-button on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_innerspinbutton_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to inner-spin-button on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_innerspinbutton_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to listbox on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_listbox_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to listbox on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_listbox_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to menulist on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_menulist_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to menulist on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_menulist_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to menulist-button on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_menulistbutton_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to menulist-button on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_menulistbutton_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to meter on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_meter_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to meter on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_meter_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to number-input on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_numberinput_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to number-input on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_numberinput_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to progress-bar on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_progressbar_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to progress-bar on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_progressbar_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to progressbar-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_progressbarvertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to progressbar-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_progressbarvertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to radio on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_radio_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to radio on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_radio_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to range on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_range_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to range on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_range_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to range-thumb on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_rangethumb_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to range-thumb on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_rangethumb_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scale-horizontal on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalehorizontal_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scale-horizontal on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalehorizontal_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumbend on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbend_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumbend on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbend_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumb-horizontal on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbhorizontal_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumb-horizontal on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbhorizontal_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumbstart on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbstart_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumbstart on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbstart_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumbtick on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbtick_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumbtick on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbtick_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumb-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbvertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumb-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalethumbvertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scale-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalevertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scale-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scalevertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scrollbarthumb-horizontal on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scrollbarthumbhorizontal_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scrollbarthumb-horizontal on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scrollbarthumbhorizontal_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scrollbarthumb-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scrollbarthumbvertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scrollbarthumb-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scrollbarthumbvertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scrollbartrack-horizontal on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scrollbartrackhorizontal_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scrollbartrack-horizontal on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scrollbartrackhorizontal_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scrollbartrack-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scrollbartrackvertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scrollbartrack-vertical on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_scrollbartrackvertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to searchfield on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_searchfield_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to searchfield on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_searchfield_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to textarea on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_textarea_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to textarea on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_textarea_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to textfield on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_textfield_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to textfield on an element that normally has appearance none",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_nonwidget_textfield_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document used `-moz-appearance: number-input` to override some other value on an <input type=number>",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_overridden_numberinput_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page used `-moz-appearance: number-input` to override some other value on an <input type=number>",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_overridden_numberinput_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document used `-moz-appearance: range` to override some other value on an <input type=range>",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_overridden_range_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page used `-moz-appearance: range` to override some other value on an <input type=range>",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_overridden_range_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to button on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_button_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to button on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_button_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to checkbox on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_checkbox_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to checkbox on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_checkbox_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to inner-spin-button on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_innerspinbutton_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to inner-spin-button on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_innerspinbutton_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to listbox on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_listbox_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to listbox on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_listbox_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to menulist on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_menulist_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to menulist on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_menulist_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to menulist-button on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_menulistbutton_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to menulist-button on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_menulistbutton_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to meter on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_meter_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to meter on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_meter_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to number-input on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_numberinput_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to number-input on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_numberinput_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to progress-bar on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_progressbar_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to progress-bar on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_progressbar_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to progressbar-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_progressbarvertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to progressbar-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_progressbarvertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to radio on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_radio_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to radio on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_radio_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to range on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_range_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to range on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_range_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to range-thumb on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_rangethumb_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to range-thumb on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_rangethumb_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scale-horizontal on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalehorizontal_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scale-horizontal on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalehorizontal_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumbend on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbend_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumbend on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbend_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumb-horizontal on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbhorizontal_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumb-horizontal on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbhorizontal_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumbstart on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbstart_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumbstart on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbstart_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumbtick on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbtick_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumbtick on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbtick_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scalethumb-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbvertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scalethumb-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalethumbvertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scale-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalevertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scale-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scalevertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scrollbarthumb-horizontal on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scrollbarthumbhorizontal_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scrollbarthumb-horizontal on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scrollbarthumbhorizontal_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scrollbarthumb-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scrollbarthumbvertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scrollbarthumb-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scrollbarthumbvertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scrollbartrack-horizontal on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scrollbartrackhorizontal_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scrollbartrack-horizontal on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scrollbartrackhorizontal_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to scrollbartrack-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scrollbartrackvertical_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to scrollbartrack-vertical on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_scrollbartrackvertical_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to searchfield on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_searchfield_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to searchfield on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_searchfield_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to textarea on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_textarea_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to textarea on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_textarea_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document sets -moz-appearance to textfield on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_textfield_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page sets -moz-appearance to textfield on an element that normally has some other non-none appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_appearance_widget_textfield_page",
             "type": "STRING"
           },
           {
@@ -25900,6 +26602,24 @@
                 "type": "STRING"
               },
               {
+                "description": "Successfully started HTTP channels when TRR is enabled; Keyed by TRR auto-detected",
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "http_channel_onstart_success_trr",
+            "type": "RECORD"
+          },
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
                 "description": "Numbers of HTTP transactions and connections by type. There are some categories separated by labels based on 4 parameters: 1. normal browsing or private browsing 2. first party or third party 3. class of service (Leader/Background/Others) 4. tracking classification (Basic/Content/FingerprintingContent).",
                 "mode": "NULLABLE",
                 "name": "value",
@@ -27921,6 +28641,18 @@
                     "description": "The percentage of pages with a mousemove listener anywhere in the document that would disable APZ key scrolling. This is tracked for non system principal windows, so it applies to toplevel windows and subframes/iframes, but not chrome windows.",
                     "mode": "NULLABLE",
                     "name": "apz_aware_mousemove_listeners",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether non-RDM page had user-triggered zooming activity",
+                    "mode": "NULLABLE",
+                    "name": "apz_zoom_activity",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether RDM page had user-triggered zooming activity",
+                    "mode": "NULLABLE",
+                    "name": "apz_zoom_activity_rdm",
                     "type": "STRING"
                   },
                   {
@@ -33720,6 +34452,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "All errors that could trigger the fallback bar, even after the bar is shown.",
+                    "mode": "NULLABLE",
+                    "name": "pdf_viewer_fallback_error",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "The reason the fallback bar was shown.",
                     "mode": "NULLABLE",
                     "name": "pdf_viewer_fallback_reason",
@@ -34521,6 +35259,12 @@
                     "description": "Total time spent ticking the refresh driver in milliseconds",
                     "mode": "NULLABLE",
                     "name": "refresh_driver_tick",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "The distance(m) between the the result of 2 services that detect the users location",
+                    "mode": "NULLABLE",
+                    "name": "region_location_services_difference",
                     "type": "STRING"
                   },
                   {
@@ -36501,6 +37245,678 @@
                     "description": "Whether or not the metadata for a variable-length prefix set loaded from disk is corrupted (true = file corrupted).",
                     "mode": "NULLABLE",
                     "name": "urlclassifier_vlps_metadata_corrupt",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to button on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_button_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to button on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_button_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to checkbox on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_checkbox_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to checkbox on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_checkbox_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to inner-spin-button on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_innerspinbutton_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to inner-spin-button on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_innerspinbutton_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to listbox on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_listbox_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to listbox on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_listbox_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to menulist on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_menulist_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to menulist on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_menulist_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to menulist-button on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_menulistbutton_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to menulist-button on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_menulistbutton_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to meter on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_meter_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to meter on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_meter_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to number-input on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_numberinput_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to number-input on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_numberinput_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to progress-bar on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_progressbar_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to progress-bar on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_progressbar_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to progressbar-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_progressbarvertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to progressbar-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_progressbarvertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to radio on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_radio_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to radio on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_radio_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to range on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_range_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to range on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_range_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to range-thumb on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_rangethumb_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to range-thumb on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_rangethumb_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scale-horizontal on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalehorizontal_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scale-horizontal on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalehorizontal_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumbend on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbend_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumbend on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbend_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumb-horizontal on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbhorizontal_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumb-horizontal on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbhorizontal_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumbstart on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbstart_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumbstart on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbstart_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumbtick on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbtick_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumbtick on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbtick_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumb-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbvertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumb-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalethumbvertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scale-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalevertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scale-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scalevertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scrollbarthumb-horizontal on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scrollbarthumbhorizontal_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scrollbarthumb-horizontal on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scrollbarthumbhorizontal_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scrollbarthumb-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scrollbarthumbvertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scrollbarthumb-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scrollbarthumbvertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scrollbartrack-horizontal on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scrollbartrackhorizontal_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scrollbartrack-horizontal on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scrollbartrackhorizontal_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scrollbartrack-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scrollbartrackvertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scrollbartrack-vertical on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_scrollbartrackvertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to searchfield on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_searchfield_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to searchfield on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_searchfield_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to textarea on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_textarea_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to textarea on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_textarea_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to textfield on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_textfield_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to textfield on an element that normally has appearance none",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_nonwidget_textfield_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document used `-moz-appearance: number-input` to override some other value on an <input type=number>",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_overridden_numberinput_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page used `-moz-appearance: number-input` to override some other value on an <input type=number>",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_overridden_numberinput_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document used `-moz-appearance: range` to override some other value on an <input type=range>",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_overridden_range_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page used `-moz-appearance: range` to override some other value on an <input type=range>",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_overridden_range_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to button on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_button_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to button on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_button_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to checkbox on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_checkbox_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to checkbox on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_checkbox_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to inner-spin-button on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_innerspinbutton_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to inner-spin-button on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_innerspinbutton_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to listbox on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_listbox_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to listbox on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_listbox_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to menulist on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_menulist_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to menulist on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_menulist_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to menulist-button on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_menulistbutton_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to menulist-button on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_menulistbutton_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to meter on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_meter_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to meter on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_meter_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to number-input on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_numberinput_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to number-input on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_numberinput_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to progress-bar on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_progressbar_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to progress-bar on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_progressbar_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to progressbar-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_progressbarvertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to progressbar-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_progressbarvertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to radio on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_radio_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to radio on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_radio_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to range on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_range_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to range on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_range_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to range-thumb on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_rangethumb_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to range-thumb on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_rangethumb_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scale-horizontal on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalehorizontal_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scale-horizontal on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalehorizontal_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumbend on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbend_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumbend on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbend_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumb-horizontal on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbhorizontal_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumb-horizontal on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbhorizontal_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumbstart on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbstart_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumbstart on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbstart_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumbtick on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbtick_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumbtick on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbtick_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scalethumb-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbvertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scalethumb-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalethumbvertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scale-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalevertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scale-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scalevertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scrollbarthumb-horizontal on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scrollbarthumbhorizontal_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scrollbarthumb-horizontal on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scrollbarthumbhorizontal_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scrollbarthumb-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scrollbarthumbvertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scrollbarthumb-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scrollbarthumbvertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scrollbartrack-horizontal on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scrollbartrackhorizontal_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scrollbartrack-horizontal on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scrollbartrackhorizontal_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to scrollbartrack-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scrollbartrackvertical_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to scrollbartrack-vertical on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_scrollbartrackvertical_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to searchfield on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_searchfield_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to searchfield on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_searchfield_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to textarea on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_textarea_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to textarea on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_textarea_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document sets -moz-appearance to textfield on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_textfield_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page sets -moz-appearance to textfield on an element that normally has some other non-none appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_appearance_widget_textfield_page",
                     "type": "STRING"
                   },
                   {
@@ -52839,6 +54255,48 @@
                     "type": "INT64"
                   },
                   {
+                    "description": "A counter incremented every time the print dialog is opened from print preview.\n",
+                    "mode": "NULLABLE",
+                    "name": "printing_dialog_opened_via_preview",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "A counter incremented every time the print dialog is opened without opening print preview.\n",
+                    "mode": "NULLABLE",
+                    "name": "printing_dialog_opened_without_preview",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "A counter incremented every time a print dialog opened from print preview is cancelled.\n",
+                    "mode": "NULLABLE",
+                    "name": "printing_dialog_via_preview_cancelled",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "A counter incremented every time a print dialog that was opened without print preview is cancelled.\n",
+                    "mode": "NULLABLE",
+                    "name": "printing_dialog_without_preview_cancelled",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "A counter incremented every time a print preview session exits without printing.\n",
+                    "mode": "NULLABLE",
+                    "name": "printing_preview_cancelled",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "A counter incremented every time the user initiates print preview.\n",
+                    "mode": "NULLABLE",
+                    "name": "printing_preview_opened",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "A counter incremented every time a silent print (a print without a print settings dialog being opened) is initiated.  This happens when extensions invoke ExtensionAPI.tabs.saveAsPDF, for example, or when the print.always_print_silent pref is set.\n",
+                    "mode": "NULLABLE",
+                    "name": "printing_silent_print",
+                    "type": "INT64"
+                  },
+                  {
                     "description": "How many times we ended up recompiling a script from the script preloader on the main thread.",
                     "mode": "NULLABLE",
                     "name": "script_preloader_mainthread_recompile",
@@ -53495,6 +54953,12 @@
               },
               {
                 "fields": [
+                  {
+                    "description": "Input device that triggered the zoom gesture (InputData::PinchGestureSource)",
+                    "mode": "NULLABLE",
+                    "name": "apz_zoom_pinchsource",
+                    "type": "STRING"
+                  },
                   {
                     "fields": [
                       {
@@ -55137,6 +56601,24 @@
                         "type": "STRING"
                       },
                       {
+                        "description": "A counter incremented every time the user prints to a certain target type.  For the most part, the 'unknown' count will be prints to a physical printer, but we can't know for sure since third party drivers could also be print to file drivers.\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "printing_target_type",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
                         "description": "Keys are the filenames of unexpected files in the profile's origin directories.\n",
                         "mode": "NULLABLE",
                         "name": "value",
@@ -56289,10 +57771,64 @@
                     "type": "BOOL"
                   },
                   {
+                    "description": "The count of how many times files were opened from the download panel.\n",
+                    "mode": "NULLABLE",
+                    "name": "downloads_file_opened",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The count of how many times the downloads panel was shown per session.\n",
+                    "mode": "NULLABLE",
+                    "name": "downloads_panel_shown",
+                    "type": "INT64"
+                  },
+                  {
                     "description": "Whether the Text Encoding menu was used to override an encoding in this subsession.",
                     "mode": "NULLABLE",
                     "name": "encoding_override_used",
                     "type": "BOOL"
+                  },
+                  {
+                    "description": "The count of how many times the find next button was used per session.\n",
+                    "mode": "NULLABLE",
+                    "name": "findbar_find_next",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The count of how many times the find previous button was used per session.\n",
+                    "mode": "NULLABLE",
+                    "name": "findbar_find_prev",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The count of how many times the \"Highlight All\" button was used in find toolbar.\n",
+                    "mode": "NULLABLE",
+                    "name": "findbar_highlight_all",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The count of how many times the \"Match Case\" button was used in find toolbar.\n",
+                    "mode": "NULLABLE",
+                    "name": "findbar_match_case",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The count of how many times the \"Match Diacritics\" button was used in find toolbar.\n",
+                    "mode": "NULLABLE",
+                    "name": "findbar_match_diacritics",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The count of how many times the \"Find toolbar\" was shown per session.\n",
+                    "mode": "NULLABLE",
+                    "name": "findbar_shown",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The count of how many times the \"Whole Words\" button was used in find toolbar.\n",
+                    "mode": "NULLABLE",
+                    "name": "findbar_whole_words",
+                    "type": "INT64"
                   },
                   {
                     "description": "Number of milliseconds the FirstRun service took to run.",
