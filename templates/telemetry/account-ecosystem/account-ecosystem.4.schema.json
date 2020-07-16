@@ -4,7 +4,13 @@
   "title": "account-ecosystem",
   "mozPipelineMetadata": {
     "bq_dataset": "account_ecosystem",
-    "bq_table": "desktop"
+    "bq_table": "desktop",
+    "jwe_mappings": [
+      {
+        "source_field_path": "payload.ecosystemAnonId",
+        "decrypted_field_path": "payload.ecosystemUserId"
+      }
+    ]
   },
   "properties": {
     @TELEMETRY_APPLICATION_1_JSON@,

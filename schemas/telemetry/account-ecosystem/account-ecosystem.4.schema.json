@@ -2,7 +2,13 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "mozPipelineMetadata": {
     "bq_dataset": "account_ecosystem",
-    "bq_table": "desktop"
+    "bq_table": "desktop",
+    "jwe_mappings": [
+      {
+        "decrypted_field_path": "payload.ecosystemUserId",
+        "source_field_path": "payload.ecosystemAnonId"
+      }
+    ]
   },
   "properties": {
     "application": {
