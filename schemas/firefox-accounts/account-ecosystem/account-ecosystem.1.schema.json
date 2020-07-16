@@ -12,6 +12,16 @@
       ]
     }
   ],
+  "mozPipelineMetadata": {
+    "bq_dataset": "firefox_accounts",
+    "bq_table": "account_ecosystem_v1",
+    "jweMappings": [
+      {
+        "decrypted_field_path": "ecosystem_user_id",
+        "source_field_path": "ecosystem_anon_id"
+      }
+    ]
+  },
   "properties": {
     "ecosystem_client_id": {
       "type": "string"

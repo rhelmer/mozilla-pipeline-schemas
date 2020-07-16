@@ -1,5 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "mozPipelineMetadata": {
+    "bq_dataset": "account_ecosystem",
+    "bq_table": "desktop"
+  },
   "properties": {
     "application": {
       "additionalProperties": false,

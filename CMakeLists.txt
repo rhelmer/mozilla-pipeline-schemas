@@ -19,6 +19,11 @@ if(NOT JQ_EXE)
   message(FATAL_ERROR "jq is required for output formatting")
 endif()
 
+find_program(PYTHON_EXE python3)
+if(NOT PYTHON_EXE)
+  message(FATAL_ERROR "python3 is required for output formatting")
+endif()
+
 find_program(PARQUETFMT_EXE parquetfmt)
 if(NOT PARQUETFMT_EXE)
   if(WIN32)
@@ -68,7 +73,15 @@ foreach(ITEM IN ITEMS ${SCHEMAS})
     # NOTE the artifacts are written back into the source repository (see the README)
     set(IN_FILE "${CMAKE_SOURCE_DIR}/templates/${ITEM}")
     set(OUT_FILE "${CMAKE_SOURCE_DIR}/schemas/${ITEM}")
-    if(ITEM MATCHES "\\.json$") # pretty print
+    if(ITEM MATCHES "account-ecosystem...schema.json$") # TODO: Make this the default handling for all JSON schemas
+      set(TMP_FILE "${OUT_FILE}.tmp")
+      configure_file(${IN_FILE} ${TMP_FILE} @ONLY)
+      execute_process(COMMAND ${PYTHON_EXE} ../inject_metadata.py ${ITEM} RESULT_VARIABLE INJECT_RV INPUT_FILE ${TMP_FILE} OUTPUT_FILE ${OUT_FILE})
+      if(NOT INJECT_RV EQUAL 0)
+        message(FATAL_ERROR "python output error ${INJECT_RV} ${ITEM}")
+      endif()
+      file(REMOVE ${TMP_FILE}) # the tmp file is intentionally not removed on failure so it can be examined
+    elseif(ITEM MATCHES "\\.json$") # pretty print
       set(TMP_FILE "${OUT_FILE}.tmp")
       configure_file(${IN_FILE} ${TMP_FILE} @ONLY)
       execute_process(COMMAND ${JQ_EXE} --sort-keys . RESULT_VARIABLE JQ_RV INPUT_FILE ${TMP_FILE} OUTPUT_FILE ${OUT_FILE})
