@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Metaschema for validating the structure of the per-doctype schemas in this repository",
+  "id": "http://jsonschema.net",
+  "properties": {
+    "mozPipelineMetadata": {
+      "description": "Container for per-doctype metadata that can affect how pings are processed in the pipeline",
+      "properties": {
+        "bq_dataset_family": {
+          "description": "The base name for the destination BigQuery dataset; if this is set to 'telemetry', the pipeline will write into 'telemetry_live'",
+          "type": "string"
+        },
+        "bq_table": {
+          "type": "string"
+        },
+        "jwe_mappings": {
+          "items": {
+            "properties": {
+              "decrypted_field_path": {
+                "type": "string"
+              },
+              "source_field_path": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object"
+}
