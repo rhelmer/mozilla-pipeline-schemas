@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "mozPipelineMetadata": {
-    "bq_dataset": "account_ecosystem",
+    "bq_dataset_family": "account_ecosystem",
     "bq_table": "desktop",
     "jwe_mappings": [
       {

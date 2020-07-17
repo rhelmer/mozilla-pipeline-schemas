@@ -13,7 +13,7 @@
     }
   ],
   "mozPipelineMetadata": {
-    "bq_dataset": "firefox_accounts",
+    "bq_dataset_family": "firefox_accounts",
     "bq_table": "account_ecosystem_v1",
     "jwe_mappings": [
       {

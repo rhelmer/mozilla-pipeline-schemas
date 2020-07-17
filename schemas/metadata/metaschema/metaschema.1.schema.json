@@ -14,6 +14,7 @@
           "type": "string"
         },
         "jwe_mappings": {
+          "description": "Mappings of encrypted JWE field paths to destinations where the value decrypted by the pipeline should be placed; currently only used for Account Ecosystem Telemetry; paths may indicate nested fields with dots such as 'payload.ecosystemAnonId'",
           "items": {
             "properties": {
               "decrypted_field_path": {

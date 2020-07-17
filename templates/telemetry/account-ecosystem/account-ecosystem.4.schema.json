@@ -3,7 +3,7 @@
   "type": "object",
   "title": "account-ecosystem",
   "mozPipelineMetadata": {
-    "bq_dataset": "account_ecosystem",
+    "bq_dataset_family": "account_ecosystem",
     "bq_table": "desktop",
     "jwe_mappings": [
       {

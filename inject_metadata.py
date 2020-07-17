@@ -14,7 +14,7 @@ if __name__ == "__main__":
     fileparts = sys.argv[1].split('/')
 
     # Prepare some default metadata if not overridden in the template schema.
-    bq_dataset = fileparts[0].replace('-', '_')
+    bq_dataset_family = fileparts[0].replace('-', '_')
     doctype = fileparts[1].replace('-', '_')
     version = fileparts[2].split('.')[1]
     bq_table = '{}_v{}'.format(doctype, version)
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # Parse the schema and inject default metadata fields.
     schema = json.load(sys.stdin)
     meta = schema.setdefault('mozPipelineMetadata', {})
-    meta.setdefault('bq_dataset', bq_dataset)
+    meta.setdefault('bq_dataset_family', bq_dataset_family)
     meta.setdefault('bq_table', bq_table)
 
     # Output.
