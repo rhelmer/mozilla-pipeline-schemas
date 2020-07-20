@@ -15,6 +15,17 @@
           "type": "string",
           "description": "The base name for the destination BigQuery dataset; if this is set to 'telemetry', the pipeline will write into 'telemetry_live'"
         },
+        "expiration_policy": {
+          "type": "object",
+          "description": "Defines how to expire data on the destination stable table in BigQuery; if this section is absent, retention will be unlimited by default",
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": ["delete"],
+              "description": "The action to take for data beyond the given retention period; currently only 'delete' is accepted, which causes a time-based partition expiration to be set on the destination stable table in BigQuery"
+            }
+          }
+        },
         "jwe_mappings": {
           "type": "array",
           "description": "Mappings of encrypted JWE field paths to destinations where the value decrypted by the pipeline should be placed; currently only used for Account Ecosystem Telemetry; paths may indicate nested fields with dots such as 'payload.ecosystemAnonId'",
