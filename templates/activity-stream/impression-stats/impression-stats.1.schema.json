@@ -4,8 +4,8 @@
   "title": "impression-stats",
   "mozPipelineMetadata": {
     "expiration_policy": {
-      "action": "delete",
-      "retention_days": 180
+      "delete_after_days": 180,
+      "collect_through_date": "2099-01-01"
     }
   },
   "properties": {

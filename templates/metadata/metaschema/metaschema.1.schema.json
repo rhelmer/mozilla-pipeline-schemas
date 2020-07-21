@@ -17,12 +17,16 @@
         },
         "expiration_policy": {
           "type": "object",
-          "description": "Defines how to expire data on the destination stable table in BigQuery; if this section is absent, retention will be unlimited by default",
+          "description": "Various options controlling data lifecycle",
           "properties": {
-            "action": {
+            "delete_after_days": {
+              "type": "integer",
+              "description": "If present, a time_partitioning_expiration policy will be set on the destination stable table in BigQuery"
+            },
+            "collect_through_date": {
               "type": "string",
-              "enum": ["delete"],
-              "description": "The action to take for data beyond the given retention period; currently only 'delete' is accepted, which causes a time-based partition expiration to be set on the destination stable table in BigQuery"
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+              "description": "If present, the pipeline will reject new data with submission_timestamp after the given date, sending it to error output"
             }
           }
         },
