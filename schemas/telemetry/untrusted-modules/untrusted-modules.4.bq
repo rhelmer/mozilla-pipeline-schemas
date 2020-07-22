@@ -1032,6 +1032,12 @@
                 "type": "BOOL"
               },
               {
+                "description": "Whether or not Firefox desktop is embedded by Firefox Reality. This is Windows only.",
+                "mode": "NULLABLE",
+                "name": "embedded_in_firefox_reality",
+                "type": "BOOL"
+              },
+              {
                 "fields": [
                   {
                     "fields": [
@@ -1076,8 +1082,15 @@
                   {
                     "fields": [
                       {
+                        "description": "Indicates whether the d3d11 compositor was blocklisted due to driver bugs. (This field was renamed to blocklisted in bug 1647225).",
                         "mode": "NULLABLE",
                         "name": "blacklisted",
+                        "type": "BOOL"
+                      },
+                      {
+                        "description": "Indicates whether the d3d11 compositor was blocklisted due to driver bugs. (This field replaces blacklisted as of bug 1647225).",
+                        "mode": "NULLABLE",
+                        "name": "blocklisted",
                         "type": "BOOL"
                       },
                       {
@@ -1138,7 +1151,31 @@
                       }
                     ],
                     "mode": "NULLABLE",
+                    "name": "opengl_compositing",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "status",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "NULLABLE",
                     "name": "webrender",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "status",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "NULLABLE",
+                    "name": "wr_compositor",
                     "type": "RECORD"
                   },
                   {

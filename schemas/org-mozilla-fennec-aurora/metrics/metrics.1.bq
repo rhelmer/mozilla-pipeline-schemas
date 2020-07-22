@@ -288,6 +288,18 @@
             "type": "BOOL"
           },
           {
+            "description": "A boolean that indicates if the user has any open NORMAL tabs.\n",
+            "mode": "NULLABLE",
+            "name": "metrics_has_open_tabs",
+            "type": "BOOL"
+          },
+          {
+            "description": "A boolean that indicates if the user has recently used PWAs.\nSee recently_used_pwa_count for the actual count.\n",
+            "mode": "NULLABLE",
+            "name": "metrics_has_recent_pwas",
+            "type": "BOOL"
+          },
+          {
             "description": "A boolean that indicates if the user has top sites\n",
             "mode": "NULLABLE",
             "name": "metrics_has_top_sites",
@@ -331,27 +343,51 @@
             "type": "INT64"
           },
           {
-            "description": "The total number of read operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental reads performed as part of a sync. It is intended to be used together with `read_query_error_count` to measure the  overall error rate of read operations on the logins store.\n",
+            "description": "The total number of read operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental reads performed as part of a sync. It is intended to be used together with `read_query_error_count` to measure the overall error rate of read operations on the logins store.\n",
             "mode": "NULLABLE",
             "name": "logins_store_read_query_count",
             "type": "INT64"
           },
           {
-            "description": "The number of times the login store was unlocked. It is intended to be used together with `unlock_error_count` to measure the overall  error rate of unlocking the logins store.\n",
+            "description": "The number of times the login store was unlocked. It is intended to be used together with `unlock_error_count` to measure the overall error rate of unlocking the logins store.\n",
             "mode": "NULLABLE",
             "name": "logins_store_unlock_count",
             "type": "INT64"
           },
           {
-            "description": "The total number of write operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental writes performed as part of a sync. It is intended to be used together with `write_query_error_count` to measure the  overall error rate of write operations on the logins store.\n",
+            "description": "The total number of write operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental writes performed as part of a sync. It is intended to be used together with `write_query_error_count` to measure the overall error rate of write operations on the logins store.\n",
             "mode": "NULLABLE",
             "name": "logins_store_write_query_count",
+            "type": "INT64"
+          },
+          {
+            "description": "A counter that indicates how many PWAs a user has recently used.\nThreshold for \"recency\" set in HomeActivity#PWA_RECENTLY_USED_THRESHOLD.\nCurrently we are not told by the OS when a PWA is removed by the user,\nso we use the \"recently used\" heuristic to judge how many PWAs are still\nactive, as a proxy for \"installed\". This value will only be set if the\nuser has at least *one* recently used PWA. If they have 0, this metric\nwill not be sent, resulting in a null value during analysis on the\nserver-side. To disambiguate between a failed `recently_used_pwa_count`\nmetric and 0 recent PWAs, please see `has_recent_pwas`.\n",
+            "mode": "NULLABLE",
+            "name": "metrics_recently_used_pwa_count",
+            "type": "INT64"
+          },
+          {
+            "description": "A counter that indicates how many NORMAL tabs a user has open. This\nvalue will only be set if the user has at least *one* open tab. If they\nhave 0, this ping will not get sent, resulting in a null value. To\ndisambiguate between a failed `tabs_open_count` ping and 0 open tabs,\nplease see `has_open_tabs`.\n",
+            "mode": "NULLABLE",
+            "name": "metrics_tabs_open_count",
             "type": "INT64"
           },
           {
             "description": "A counter that indicates how many top sites a user has. This value will\nonly be set if the user has at least *one* top site. If they have 0,\nthis ping will not get sent, resulting in a null value. To disambiguate\nbetween a failed `top_sites_count` ping and 0 top sites, please see\n`has_top_sites`.\n",
             "mode": "NULLABLE",
             "name": "metrics_top_sites_count",
+            "type": "INT64"
+          },
+          {
+            "description": "The total number of read operations performed on the places store. The count only includes operations triggered by the application, not e.g. incidental reads performed as part of a sync. It is intended to be used together with `read_query_error_count` to measure the overall error rate of read operations on the places store.\n",
+            "mode": "NULLABLE",
+            "name": "places_manager_read_query_count",
+            "type": "INT64"
+          },
+          {
+            "description": "The total number of write operations performed on the places store. The count only includes operations triggered by the application, not e.g. incidental writes performed as part of a sync. It is intended to be used together with `write_query_error_count` to measure the overall error rate of write operations on the places store.\n",
+            "mode": "NULLABLE",
+            "name": "places_manager_write_query_count",
             "type": "INT64"
           }
         ],
@@ -888,6 +924,42 @@
             ],
             "mode": "REPEATED",
             "name": "metrics_search_count",
+            "type": "RECORD"
+          },
+          {
+            "description": "The total number of errors encountered during read operations on the places store, labeled by type. It is intended to be used together with `read_query_count` to measure the overall error rate of read operations on the places store.\n",
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "places_manager_read_query_error_count",
+            "type": "RECORD"
+          },
+          {
+            "description": "The total number of errors encountered during write operations on the places store, labeled by type. It is intended to be used together with `write_query_count` to measure the overall error rate of write operations on the places store.\n",
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "key",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "value",
+                "type": "INT64"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "places_manager_write_query_error_count",
             "type": "RECORD"
           }
         ],
@@ -4375,6 +4447,186 @@
             ],
             "mode": "NULLABLE",
             "name": "performance_time_response_start",
+            "type": "RECORD"
+          },
+          {
+            "description": "The time taken to execute a read query on the places store.\n",
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "bucket_count",
+                "type": "INT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "histogram_type",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "overflow",
+                "type": "INT64"
+              },
+              {
+                "mode": "REPEATED",
+                "name": "range",
+                "type": "FLOAT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "sum",
+                "type": "INT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "time_unit",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "underflow",
+                "type": "INT64"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "key",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "value",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "values",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "NULLABLE",
+            "name": "places_manager_read_query_time",
+            "type": "RECORD"
+          },
+          {
+            "description": "The time taken to execute a scan query on the places store. This metric is for queries that we expect to be costly e.g. getBookmarksTree(guid, recursive=True).\n",
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "bucket_count",
+                "type": "INT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "histogram_type",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "overflow",
+                "type": "INT64"
+              },
+              {
+                "mode": "REPEATED",
+                "name": "range",
+                "type": "FLOAT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "sum",
+                "type": "INT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "time_unit",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "underflow",
+                "type": "INT64"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "key",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "value",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "values",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "NULLABLE",
+            "name": "places_manager_scan_query_time",
+            "type": "RECORD"
+          },
+          {
+            "description": "The time taken to execute a write query on the places store.\n",
+            "fields": [
+              {
+                "mode": "NULLABLE",
+                "name": "bucket_count",
+                "type": "INT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "histogram_type",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "overflow",
+                "type": "INT64"
+              },
+              {
+                "mode": "REPEATED",
+                "name": "range",
+                "type": "FLOAT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "sum",
+                "type": "INT64"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "time_unit",
+                "type": "STRING"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "underflow",
+                "type": "INT64"
+              },
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "key",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "value",
+                    "type": "INT64"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "values",
+                "type": "RECORD"
+              }
+            ],
+            "mode": "NULLABLE",
+            "name": "places_manager_write_query_time",
             "type": "RECORD"
           }
         ],

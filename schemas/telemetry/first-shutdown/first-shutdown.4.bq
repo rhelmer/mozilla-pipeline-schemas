@@ -1032,6 +1032,12 @@
                 "type": "BOOL"
               },
               {
+                "description": "Whether or not Firefox desktop is embedded by Firefox Reality. This is Windows only.",
+                "mode": "NULLABLE",
+                "name": "embedded_in_firefox_reality",
+                "type": "BOOL"
+              },
+              {
                 "fields": [
                   {
                     "fields": [
@@ -1076,8 +1082,15 @@
                   {
                     "fields": [
                       {
+                        "description": "Indicates whether the d3d11 compositor was blocklisted due to driver bugs. (This field was renamed to blocklisted in bug 1647225).",
                         "mode": "NULLABLE",
                         "name": "blacklisted",
+                        "type": "BOOL"
+                      },
+                      {
+                        "description": "Indicates whether the d3d11 compositor was blocklisted due to driver bugs. (This field replaces blacklisted as of bug 1647225).",
+                        "mode": "NULLABLE",
+                        "name": "blocklisted",
                         "type": "BOOL"
                       },
                       {
@@ -1138,7 +1151,31 @@
                       }
                     ],
                     "mode": "NULLABLE",
+                    "name": "opengl_compositing",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "status",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "NULLABLE",
                     "name": "webrender",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "status",
+                        "type": "STRING"
+                      }
+                    ],
+                    "mode": "NULLABLE",
+                    "name": "wr_compositor",
                     "type": "RECORD"
                   },
                   {
@@ -4718,6 +4755,18 @@
             "type": "STRING"
           },
           {
+            "description": "Seconds between `user-interaction-active` and `user-interaction-inactive`. For use in evaluating baseline engagement for Project FOG.",
+            "mode": "NULLABLE",
+            "name": "fog_eval_user_active_s",
+            "type": "STRING"
+          },
+          {
+            "description": "Seconds between a Firefox window being raised and lowered. For use in evaluating baseline engagement for Project FOG.",
+            "mode": "NULLABLE",
+            "name": "fog_eval_window_raised_s",
+            "type": "STRING"
+          },
+          {
             "description": "font cache hit",
             "mode": "NULLABLE",
             "name": "font_cache_hit",
@@ -5885,6 +5934,12 @@
             "description": "Whether an HTTP/2 session failed because the peer did not handshake properly",
             "mode": "NULLABLE",
             "name": "http2_fail_before_settings",
+            "type": "STRING"
+          },
+          {
+            "description": "HTTP3: Streams created per connection",
+            "mode": "NULLABLE",
+            "name": "http3_request_per_conn",
             "type": "STRING"
           },
           {
@@ -7223,6 +7278,12 @@
             "description": "Encountered a missing character that would have been supported by a user-installed font",
             "mode": "NULLABLE",
             "name": "missing_font_user",
+            "type": "STRING"
+          },
+          {
+            "description": "Accumulates how many downloads are mixed-content (True = The download is MixedContent, False= is not MixedContent)",
+            "mode": "NULLABLE",
+            "name": "mixed_content_downloads",
             "type": "STRING"
           },
           {
@@ -9374,6 +9435,12 @@
             "type": "STRING"
           },
           {
+            "description": "SPDY: Streams created per connection",
+            "mode": "NULLABLE",
+            "name": "spdy_request_per_conn_3",
+            "type": "STRING"
+          },
+          {
             "description": "SPDY: Streams recevied per connection",
             "mode": "NULLABLE",
             "name": "spdy_server_initiated_streams",
@@ -10463,6 +10530,18 @@
             "description": "A number of successful and failed attempts to translate a document",
             "mode": "NULLABLE",
             "name": "translation_opportunities",
+            "type": "STRING"
+          },
+          {
+            "description": "When in TRR-first mode if DNS succeeded, it lists the reason we may have skipped TRR",
+            "mode": "NULLABLE",
+            "name": "trr_skip_reason_dns_worked",
+            "type": "STRING"
+          },
+          {
+            "description": "When in TRR-first mode, it lists the reason we may have skipped TRR",
+            "mode": "NULLABLE",
+            "name": "trr_skip_reason_trr_first",
             "type": "STRING"
           },
           {
@@ -12065,6 +12144,18 @@
             "description": "Whether a page used the CSS property animation-timing-function",
             "mode": "NULLABLE",
             "name": "use_counter2_css_property_animation_timing_function_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document used the CSS property appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_appearance_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page used the CSS property appearance",
+            "mode": "NULLABLE",
+            "name": "use_counter2_css_property_appearance_page",
             "type": "STRING"
           },
           {
@@ -20261,6 +20352,18 @@
             "description": "Whether a page used MathML_DeprecatedScriptShiftAttributes",
             "mode": "NULLABLE",
             "name": "use_counter2_deprecated_math_ml_deprecated_script_shift_attributes_page",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a document used MathML_DeprecatedStixgeneralOperatorStretching",
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_stixgeneral_operator_stretching_document",
+            "type": "STRING"
+          },
+          {
+            "description": "Whether a page used MathML_DeprecatedStixgeneralOperatorStretching",
+            "mode": "NULLABLE",
+            "name": "use_counter2_deprecated_math_ml_deprecated_stixgeneral_operator_stretching_page",
             "type": "STRING"
           },
           {
@@ -31428,6 +31531,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "The length of time (in milliseconds) that it takes for the cache worker to generate the cache and return it to the main thread",
+                    "mode": "NULLABLE",
+                    "name": "fx_abouthome_cache_construction",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Firefox: Time to initialize the bookmarks toolbar view (ms)",
                     "mode": "NULLABLE",
                     "name": "fx_bookmarks_toolbar_init_ms",
@@ -32445,6 +32554,12 @@
                     "description": "Number of HTML editors which has shown object resizers.",
                     "mode": "NULLABLE",
                     "name": "htmleditors_with_resizers",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "HTTP3: Streams created per connection",
+                    "mode": "NULLABLE",
+                    "name": "http3_request_per_conn",
                     "type": "STRING"
                   },
                   {
@@ -33780,6 +33895,12 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Accumulates how many downloads are mixed-content (True = The download is MixedContent, False= is not MixedContent)",
+                    "mode": "NULLABLE",
+                    "name": "mixed_content_downloads",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "How often would blocked mixed content be allowed if HSTS upgrades were allowed? 0=display/no-HSTS, 1=display/HSTS, 2=active/no-HSTS, 3=active/HSTS",
                     "mode": "NULLABLE",
                     "name": "mixed_content_hsts",
@@ -34521,6 +34642,12 @@
                     "description": "How many times PDF Viewer was used",
                     "mode": "NULLABLE",
                     "name": "pdf_viewer_used",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Measures the number of pending critical input events in the IPC channel when the timeout handler is about to run",
+                    "mode": "NULLABLE",
+                    "name": "pending_critical_input_when_timeout",
                     "type": "STRING"
                   },
                   {
@@ -35709,6 +35836,12 @@
                     "description": "SPDY: Streams created per connection",
                     "mode": "NULLABLE",
                     "name": "spdy_request_per_conn_2",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "SPDY: Streams created per connection",
+                    "mode": "NULLABLE",
+                    "name": "spdy_request_per_conn_3",
                     "type": "STRING"
                   },
                   {
@@ -38361,6 +38494,18 @@
                     "description": "Whether a page used the CSS property animation-timing-function",
                     "mode": "NULLABLE",
                     "name": "use_counter2_css_property_animation_timing_function_page",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a document used the CSS property appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_appearance_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page used the CSS property appearance",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_css_property_appearance_page",
                     "type": "STRING"
                   },
                   {
@@ -46560,6 +46705,18 @@
                     "type": "STRING"
                   },
                   {
+                    "description": "Whether a document used MathML_DeprecatedStixgeneralOperatorStretching",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_stixgeneral_operator_stretching_document",
+                    "type": "STRING"
+                  },
+                  {
+                    "description": "Whether a page used MathML_DeprecatedStixgeneralOperatorStretching",
+                    "mode": "NULLABLE",
+                    "name": "use_counter2_deprecated_math_ml_deprecated_stixgeneral_operator_stretching_page",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "Whether a document used MathML_DeprecatedStyleAttribute",
                     "mode": "NULLABLE",
                     "name": "use_counter2_deprecated_math_ml_deprecated_style_attribute_document",
@@ -54237,6 +54394,12 @@
                     "type": "INT64"
                   },
                   {
+                    "description": "True if HTTP3 is enabled at the start of a session.\n",
+                    "mode": "NULLABLE",
+                    "name": "networking_http3_enabled",
+                    "type": "BOOL"
+                  },
+                  {
                     "description": "How many times PDF Viewer fallback bar was shown.\n",
                     "mode": "NULLABLE",
                     "name": "pdf_viewer_fallback_shown",
@@ -55701,6 +55864,24 @@
                     "type": "BOOL"
                   },
                   {
+                    "description": "Number of times remote canvas 2D has been activated.\n",
+                    "mode": "NULLABLE",
+                    "name": "gfx_canvas_remote_activated",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "Number of times remote canvas 2D has been deactivated due to a stream read failure.\n",
+                    "mode": "NULLABLE",
+                    "name": "gfx_canvas_remote_deactivated_bad_stream",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "Number of times remote canvas 2D has been deactivated due to device creation failure.\n",
+                    "mode": "NULLABLE",
+                    "name": "gfx_canvas_remote_deactivated_no_device",
+                    "type": "INT64"
+                  },
+                  {
                     "description": "Number of discarded accumulations to histograms in child processes\n",
                     "mode": "NULLABLE",
                     "name": "telemetry_discarded_accumulations",
@@ -56169,6 +56350,420 @@
                         "type": "STRING"
                       },
                       {
+                        "description": "Records when widgets are added, removed or moved in the UI. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_customized_widgets",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the app menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_app_menu",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the bookmarks bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_bookmarks_bar",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the content context menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_content_context",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with keyboard shortcuts. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_keyboard",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the menu bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_menu_bar",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the nav bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_nav_bar",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the overflow menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_overflow_menu",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with page action items in the panel. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_pageaction_panel",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with page action items in the url bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_pageaction_urlbar",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the pinned area of the overflow menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_pinned_overflow_menu",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in the Containers section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_containers",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in the Experimental section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_experimental",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in the General section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_general",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in the Home section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_home",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in the Privacy section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_privacy",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in the Search section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_search",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in the Search results section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_search_results",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in the Sync section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_sync",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records the items interacted with in any other section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_preferences_pane_unknown",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the tab bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_tabs_bar",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "Records a count of interactions with items in the tab context menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_interaction_tabs_context",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "The widgets in the toolbars. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "BOOL"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "browser_ui_toolbar_widgets",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
                         "description": "Number of times a context menu item for an accessible object was activated (with mouse or keyboard) from the context menu opened in the accessibility tree. Keyed by the id of the context menu item.\n",
                         "mode": "NULLABLE",
                         "name": "value",
@@ -56403,6 +56998,42 @@
                         "type": "STRING"
                       },
                       {
+                        "description": "The push state of the device we are sending a command to.\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "identity_fxaccounts_push_state_command_target",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
+                        "description": "The reason why the push state for this device is in a bad shape.\n",
+                        "mode": "NULLABLE",
+                        "name": "value",
+                        "type": "INT64"
+                      }
+                    ],
+                    "mode": "REPEATED",
+                    "name": "identity_fxaccounts_push_state_this_device",
+                    "type": "RECORD"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "mode": "NULLABLE",
+                        "name": "key",
+                        "type": "STRING"
+                      },
+                      {
                         "description": "How many image requests are WebP images, excluding probes.\n",
                         "mode": "NULLABLE",
                         "name": "value",
@@ -56601,7 +57232,7 @@
                         "type": "STRING"
                       },
                       {
-                        "description": "A counter incremented every time the user prints to a certain target type.  For the most part, the 'unknown' count will be prints to a physical printer, but we can't know for sure since third party drivers could also be print to file drivers.\n",
+                        "description": "A counter incremented every time the user prints to a certain target type.  The 'pdf_unknown' count is for printers with names that we don't know about/check for, but that have 'pdf' in their name, and is mainly a sanity check that we're not missing significant counts in 'pdf_file'. For the most part, the 'unknown' count will be prints to a physical printer, but we can't know for sure since third party drivers could also be print to file drivers that we don't otherwise catch in the other counts.\n",
                         "mode": "NULLABLE",
                         "name": "value",
                         "type": "INT64"
@@ -57243,6 +57874,12 @@
                     "type": "BOOL"
                   },
                   {
+                    "description": "Status code (nsresult) for the search service initialization routine. Stored as a string due to issues with large uint scalars when the scalar was created.",
+                    "mode": "NULLABLE",
+                    "name": "browser_searchinit_init_result_status_code",
+                    "type": "STRING"
+                  },
+                  {
                     "description": "The value of the browser.startup.page pref. This pref restores the tabs and windows automatically when set to 3.\n",
                     "mode": "NULLABLE",
                     "name": "browser_session_restore_browser_startup_page",
@@ -57283,6 +57920,18 @@
                     "mode": "NULLABLE",
                     "name": "browser_session_restore_worker_restart_count",
                     "type": "INT64"
+                  },
+                  {
+                    "description": "How the about:home startup cache functioned on startup.\n0: Result value was never set (error case) 1: Cache did not exist 2: Cache page stream was corrupt / inaccessible 3: Cache script stream was corrupt / inaccessible 4: Cache was invalidated by a version bump 5: Cache was valid, but read too late to be useful. 6: Cache was valid and used. 7: Cache is disabled. 8: User did not load about:home on its own by default. 9: Cache is disabled because about:newtab preloading is disabled.\n",
+                    "mode": "NULLABLE",
+                    "name": "browser_startup_abouthome_cache_result",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "True if the about:home startup cache was written via the AsyncShutdown blocker.\n",
+                    "mode": "NULLABLE",
+                    "name": "browser_startup_abouthome_cache_shutdownwrite",
+                    "type": "BOOL"
                   },
                   {
                     "description": "The action that the user took with the slow startup notification bar. 0: No action (default) 1: User chose to open SUMO document on slow startup 2: User chose to never show the notification bar again 3: User dismissed the notification bar\n",
@@ -57843,6 +58492,30 @@
                     "type": "INT64"
                   },
                   {
+                    "description": "Whether the user is presently actively interacting with Firefox. For use in evaluating baseline engagement for Project FOG.\n",
+                    "mode": "NULLABLE",
+                    "name": "fog_eval_user_active",
+                    "type": "BOOL"
+                  },
+                  {
+                    "description": "How many Telemetry stopwatch errors did we have while trying to measure user activity? These could be attempts to start a started timer or finish an unstarted timer or so forth. See Stopwatch::Start and Stopwatch::Finish for details. For use in evaluating baseline engagement for Project FOG.\n",
+                    "mode": "NULLABLE",
+                    "name": "fog_eval_user_active_error",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "Whether a Firefox window is presently raised. For use in evaluating baseline engagement for Project FOG.\n",
+                    "mode": "NULLABLE",
+                    "name": "fog_eval_window_raised",
+                    "type": "BOOL"
+                  },
+                  {
+                    "description": "How many Telemetry stopwatch errors did we have while trying to measure window raising? These could be attempts to start a started timer or finish an unstarted timer or so forth. See Stopwatch::Start and Stopwatch::Finish for details. For use in evaluating baseline engagement for Project FOG.\n",
+                    "mode": "NULLABLE",
+                    "name": "fog_eval_window_raised_error",
+                    "type": "INT64"
+                  },
+                  {
                     "description": "Count at submission time whether the submitted form was autofilled.",
                     "mode": "NULLABLE",
                     "name": "formautofill_addresses_fill_type_autofill",
@@ -57882,6 +58555,12 @@
                     "description": "Count at submission time whether the submitted credit card form was filled manually.",
                     "mode": "NULLABLE",
                     "name": "formautofill_credit_cards_fill_type_manual",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "The number of times that a session enters browser fullscreen (f11-fullscreen).\n",
+                    "mode": "NULLABLE",
+                    "name": "fullscreen_used",
                     "type": "INT64"
                   },
                   {
@@ -58155,6 +58834,12 @@
                     "type": "INT64"
                   },
                   {
+                    "description": "True if HTTP3 is enabled at the start of a session.\n",
+                    "mode": "NULLABLE",
+                    "name": "networking_http3_enabled",
+                    "type": "BOOL"
+                  },
+                  {
                     "description": "Number of http connections transfer over a captive portal during a subsession.\n",
                     "mode": "NULLABLE",
                     "name": "networking_http_connections_captive_portal",
@@ -58278,6 +58963,12 @@
                     "description": "Measures user retention of the HTTPS-Only Mode. 0 = never enabled, 1 = enabled, 2 = disabled (but was enabled)\n",
                     "mode": "NULLABLE",
                     "name": "security_https_only_mode_enabled",
+                    "type": "INT64"
+                  },
+                  {
+                    "description": "Measures user retention of the HTTPS-Only Mode in Private Browsing. 0 = https-only never enabled in PBM, 1 = https-only enabled in PBM, 2 = https-only disabled in PBM (but was enabled)\n",
+                    "mode": "NULLABLE",
+                    "name": "security_https_only_mode_enabled_pbm",
                     "type": "INT64"
                   },
                   {
