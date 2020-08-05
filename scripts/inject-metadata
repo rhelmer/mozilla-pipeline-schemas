@@ -3,6 +3,8 @@
 """
 Accept a template schema on stdin and inject default metadata fields
 before writing to stdout.
+
+Expects the target schema path to be passed as a command-line argument.
 """
 
 import argparse
@@ -15,12 +17,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     fileparts = args.target.split('/')
+    schema_basename = fileparts[-1]
+    doctype = fileparts[-2]
+    namespace = fileparts[-3]
 
     # Prepare some default metadata if not overridden in the template schema.
-    bq_dataset_family = fileparts[0].replace('-', '_')
-    doctype = fileparts[1].replace('-', '_')
-    version = fileparts[2].split('.')[1]
-    bq_table = '{}_v{}'.format(doctype, version)
+    bq_dataset_family = namespace.replace('-', '_')
+    bq_doctype = doctype.replace('-', '_')
+    version = schema_basename.split('.')[1]
+    bq_table = '{}_v{}'.format(bq_doctype, version)
 
     # Parse the schema and inject default metadata fields.
     schema = json.load(sys.stdin)
