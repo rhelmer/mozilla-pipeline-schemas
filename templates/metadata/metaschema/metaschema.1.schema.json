@@ -7,6 +7,7 @@
     "mozPipelineMetadata": {
       "type": "object",
       "description": "Container for per-doctype metadata that can affect how pings are processed in the pipeline",
+      "additionalProperties": false,
       "properties": {
         "bq_table": {
           "type": "string"
@@ -15,9 +16,15 @@
           "type": "string",
           "description": "The base name for the destination BigQuery dataset; if this is set to 'telemetry', the pipeline will write into 'telemetry_live'"
         },
+        "uri_scheme": {
+          "type": "string",
+          "description": "The URI scheme associated with this doctype; this determines what fields appear in BigQuery under metadata.uri",
+          "enum": ["structured", "telemetry"]
+        },
         "expiration_policy": {
           "type": "object",
           "description": "Various options controlling data lifecycle",
+          "additionalProperties": false,
           "properties": {
             "delete_after_days": {
               "type": "integer",

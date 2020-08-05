@@ -8,7 +8,8 @@
         "decrypted_field_path": "payload.ecosystemUserId",
         "source_field_path": "payload.ecosystemAnonId"
       }
-    ]
+    ],
+    "uri_scheme": "structured"
   },
   "properties": {
     "application": {

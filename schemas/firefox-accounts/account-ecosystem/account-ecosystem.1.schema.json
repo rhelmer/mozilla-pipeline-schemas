@@ -20,7 +20,8 @@
         "decrypted_field_path": "ecosystem_user_id",
         "source_field_path": "ecosystem_anon_id"
       }
-    ]
+    ],
+    "uri_scheme": "structured"
   },
   "properties": {
     "ecosystem_client_id": {

@@ -27,6 +27,7 @@ if __name__ == "__main__":
     meta = schema.setdefault('mozPipelineMetadata', {})
     meta.setdefault('bq_dataset_family', bq_dataset_family)
     meta.setdefault('bq_table', bq_table)
+    meta.setdefault('uri_scheme', 'structured')
 
     # Output.
     json.dump(schema, sys.stdout, sort_keys=True, indent=2)

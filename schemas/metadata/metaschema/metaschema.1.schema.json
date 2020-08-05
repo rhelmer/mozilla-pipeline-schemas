@@ -4,6 +4,7 @@
   "id": "http://jsonschema.net",
   "properties": {
     "mozPipelineMetadata": {
+      "additionalProperties": false,
       "description": "Container for per-doctype metadata that can affect how pings are processed in the pipeline",
       "properties": {
         "bq_dataset_family": {
@@ -14,6 +15,7 @@
           "type": "string"
         },
         "expiration_policy": {
+          "additionalProperties": false,
           "description": "Various options controlling data lifecycle",
           "properties": {
             "collect_through_date": {
@@ -42,6 +44,14 @@
             "type": "object"
           },
           "type": "array"
+        },
+        "uri_scheme": {
+          "description": "The URI scheme associated with this doctype; this determines what fields appear in BigQuery under metadata.uri",
+          "enum": [
+            "structured",
+            "telemetry"
+          ],
+          "type": "string"
         }
       },
       "type": "object"

@@ -1,5 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "mozPipelineMetadata": {
+    "expiration_policy": {
+      "collect_through_date": "2020-05-12"
+    }
+  },
   "properties": {
     "application": {
       "additionalProperties": false,
