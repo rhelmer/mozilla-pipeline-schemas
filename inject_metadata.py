@@ -5,13 +5,16 @@ Accept a template schema on stdin and inject default metadata fields
 before writing to stdout.
 """
 
+import argparse
 import json
 import sys
 
 if __name__ == "__main__":
-    # TODO: Actually parse arguments; we currently assume that the filepath
-    # of the schema is passed as argv[1].
-    fileparts = sys.argv[1].split('/')
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('target')
+    args = parser.parse_args()
+
+    fileparts = args.target.split('/')
 
     # Prepare some default metadata if not overridden in the template schema.
     bq_dataset_family = fileparts[0].replace('-', '_')
