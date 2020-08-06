@@ -19,6 +19,10 @@
       {
         "decrypted_field_path": "ecosystem_user_id",
         "source_field_path": "ecosystem_anon_id"
+      },
+      {
+        "decrypted_field_path": "previous_ecosystem_user_ids",
+        "source_field_path": "previous_ecosystem_anon_ids"
       }
     ],
     "uri_scheme": "structured"

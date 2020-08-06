@@ -3,12 +3,14 @@
   "type": "object",
   "title": "account-ecosystem",
   "mozPipelineMetadata": {
-    "bq_dataset_family": "account_ecosystem",
-    "bq_table": "desktop",
     "jwe_mappings": [
       {
         "source_field_path": "payload.ecosystemAnonId",
         "decrypted_field_path": "payload.ecosystemUserId"
+      },
+      {
+        "source_field_path": "payload.previousEcosystemAnonIds",
+        "decrypted_field_path": "payload.previousEcosystemUserIds"
       }
     ]
   },
