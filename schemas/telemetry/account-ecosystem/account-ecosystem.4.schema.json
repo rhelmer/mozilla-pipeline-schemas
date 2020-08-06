@@ -9,7 +9,7 @@
         "source_field_path": "payload.ecosystemAnonId"
       }
     ],
-    "uri_scheme": "structured"
+    "uri_scheme": "telemetry"
   },
   "properties": {
     "application": {

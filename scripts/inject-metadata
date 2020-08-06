@@ -8,34 +8,60 @@ Expects the target schema path to be passed as a command-line argument.
 """
 
 import argparse
+from collections.abc import Mapping
 import json
+import os
 import sys
+
+MOZ_PIPELINE_METADATA = "mozPipelineMetadata"
+
+
+def merge_where_empty(a, b):
+    """Recursively merge b into a where items are missing in a."""
+    for key, b_value in b.items():
+        a_value = a.get(key)
+        if a_value is None:
+            a[key] = b_value
+        elif isinstance(a_value, Mapping) and isinstance(b_value, Mapping):
+            merge_where_empty(a_value, b_value)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('target')
+    parser.add_argument("target")
     args = parser.parse_args()
 
-    fileparts = args.target.split('/')
+    fileparts = args.target.split("/")
     schema_basename = fileparts[-1]
     doctype = fileparts[-2]
     namespace = fileparts[-3]
 
-    # Prepare some default metadata if not overridden in the template schema.
-    bq_dataset_family = namespace.replace('-', '_')
-    bq_doctype = doctype.replace('-', '_')
-    version = schema_basename.split('.')[1]
-    bq_table = '{}_v{}'.format(bq_doctype, version)
-
-    # Parse the schema and inject default metadata fields.
+    # Parse the schema and extract metadata.
     schema = json.load(sys.stdin)
-    meta = schema.setdefault('mozPipelineMetadata', {})
-    meta.setdefault('bq_dataset_family', bq_dataset_family)
-    meta.setdefault('bq_table', bq_table)
-    meta.setdefault('uri_scheme', 'structured')
+    meta = schema.get(MOZ_PIPELINE_METADATA, {})
+
+    # Namespace-level defaults.
+    defaults_path = "../templates/{}/defaults.schema.json".format(namespace)
+    if os.path.exists(defaults_path):
+        with open(defaults_path) as f:
+            namespace_defaults = json.loads(f.read()).get(MOZ_PIPELINE_METADATA, {})
+            merge_where_empty(meta, namespace_defaults)
+
+    # Prepare some default metadata if not overridden in the template schema.
+    bq_dataset_family = namespace.replace("-", "_")
+    bq_doctype = doctype.replace("-", "_")
+    version = schema_basename.split(".")[1]
+    bq_table = "{}_v{}".format(bq_doctype, version)
+    defaults = {
+        "bq_dataset_family": bq_dataset_family,
+        "bq_table": bq_table,
+        "uri_scheme": "structured",
+    }
+    merge_where_empty(meta, defaults)
+    schema[MOZ_PIPELINE_METADATA] = meta
 
     # Output.
     json.dump(schema, sys.stdout, sort_keys=True, indent=2)
 
     # Make sure we end the file with a newline.
-    print('')
+    print("")

@@ -2,12 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "impression-stats",
-  "mozPipelineMetadata": {
-    "expiration_policy": {
-      "delete_after_days": 180,
-      "collect_through_date": "2099-01-01"
-    }
-  },
   "properties": {
     @ACTIVITY-STREAM_IMPRESSIONID_1_JSON@,
     @ACTIVITY-STREAM_PAGE_1_JSON@,
