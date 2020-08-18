@@ -1,10 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "mozPipelineMetadata": {
-    "expiration_policy": {
-      "collect_through_date": "2020-05-12"
-    }
-  },
   "properties": {
     @TELEMETRY_CREATIONDATE_1_JSON@,
     @TELEMETRY_ID_1_JSON@,
