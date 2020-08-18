@@ -10,10 +10,11 @@ Expects the target schema path to be passed as a command-line argument.
 import argparse
 from collections.abc import Mapping
 import json
-import os
+from pathlib import Path
 import sys
 
 MOZ_PIPELINE_METADATA = "mozPipelineMetadata"
+TEMPLATES_DIR = Path(__file__).parent.parent / "templates"
 
 
 def merge_where_empty(a, b):
@@ -31,7 +32,7 @@ if __name__ == "__main__":
     parser.add_argument("target")
     args = parser.parse_args()
 
-    fileparts = args.target.split("/")
+    fileparts = Path(args.target).parts
     schema_basename = fileparts[-1]
     doctype = fileparts[-2]
     namespace = fileparts[-3]
@@ -41,8 +42,8 @@ if __name__ == "__main__":
     meta = schema.get(MOZ_PIPELINE_METADATA, {})
 
     # Namespace-level defaults.
-    defaults_path = "../templates/{}/defaults.schema.json".format(namespace)
-    if os.path.exists(defaults_path):
+    defaults_path = TEMPLATES_DIR / namespace / "defaults.schema.json"
+    if defaults_path.exists():
         with open(defaults_path) as f:
             namespace_defaults = json.loads(f.read()).get(MOZ_PIPELINE_METADATA, {})
             merge_where_empty(meta, namespace_defaults)
