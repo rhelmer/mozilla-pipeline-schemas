@@ -73,7 +73,7 @@ foreach(ITEM IN ITEMS ${SCHEMAS})
     # NOTE the artifacts are written back into the source repository (see the README)
     set(IN_FILE "${CMAKE_SOURCE_DIR}/templates/${ITEM}")
     set(OUT_FILE "${CMAKE_SOURCE_DIR}/schemas/${ITEM}")
-    if(ITEM MATCHES "account-ecosystem...schema.json$|impression-stats.1.schema.json$") # TODO: Make this the default handling for all JSON schemas
+    if(ITEM MATCHES "account-ecosystem...schema.json$|impression-stats.1.schema.json$|xfocsp-error-report...schema.json") # TODO: Make this the default handling for all JSON schemas
       set(TMP_FILE "${OUT_FILE}.tmp")
       configure_file(${IN_FILE} ${TMP_FILE} @ONLY)
       execute_process(COMMAND ${PYTHON_EXE} ../scripts/inject-metadata ${ITEM} RESULT_VARIABLE INJECT_RV INPUT_FILE ${TMP_FILE} OUTPUT_FILE ${OUT_FILE})
