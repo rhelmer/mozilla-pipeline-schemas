@@ -138,6 +138,12 @@
             "mode": "NULLABLE",
             "name": "x_pingsender_version",
             "type": "STRING"
+          },
+          {
+            "description": "X-Source-Tags HTTP header",
+            "mode": "NULLABLE",
+            "name": "x_source_tags",
+            "type": "STRING"
           }
         ],
         "mode": "NULLABLE",
@@ -483,6 +489,12 @@
       {
         "fields": [
           {
+            "description": "Deprecated. Changed in https://hg.mozilla.org/mozilla-central/rev/801e4543e990929e6bb076a032774b788e612937",
+            "mode": "NULLABLE",
+            "name": "device_id",
+            "type": "STRING"
+          },
+          {
             "fields": [
               {
                 "mode": "NULLABLE",
@@ -735,6 +747,12 @@
             "type": "RECORD"
           },
           {
+            "description": "Deprecated. Changed in https://hg.mozilla.org/mozilla-central/rev/801e4543e990929e6bb076a032774b788e612937",
+            "mode": "NULLABLE",
+            "name": "restarted",
+            "type": "BOOL"
+          },
+          {
             "fields": [
               {
                 "mode": "NULLABLE",
@@ -755,6 +773,12 @@
             "mode": "NULLABLE",
             "name": "took",
             "type": "INT64"
+          },
+          {
+            "description": "Deprecated. Changed in https://hg.mozilla.org/mozilla-central/rev/801e4543e990929e6bb076a032774b788e612937",
+            "mode": "NULLABLE",
+            "name": "uid",
+            "type": "STRING"
           },
           {
             "mode": "NULLABLE",

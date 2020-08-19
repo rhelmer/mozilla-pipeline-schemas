@@ -187,6 +187,12 @@
             "mode": "NULLABLE",
             "name": "x_pingsender_version",
             "type": "STRING"
+          },
+          {
+            "description": "X-Source-Tags HTTP header",
+            "mode": "NULLABLE",
+            "name": "x_source_tags",
+            "type": "STRING"
           }
         ],
         "mode": "NULLABLE",
@@ -265,7 +271,24 @@
       {
         "fields": [
           {
-            "description": "Counts the number of times a metric was set with an invalid label. The labels are the `category.name` identifier of the metric.",
+            "mode": "NULLABLE",
+            "name": "key",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "value",
+            "type": "STRING"
+          }
+        ],
+        "mode": "REPEATED",
+        "name": "jwe",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "description": "Counts the number of times a metric was set with an invalid label.\nThe labels are the `category.name` identifier of the metric.\n",
             "fields": [
               {
                 "mode": "NULLABLE",
@@ -283,7 +306,7 @@
             "type": "RECORD"
           },
           {
-            "description": "Counts the number of times a metric was set a value that overflew. The labels are the `category.name` identifier of the metric.",
+            "description": "Counts the number of times a metric was set a value that overflowed.\nThe labels are the `category.name` identifier of the metric.\n",
             "fields": [
               {
                 "mode": "NULLABLE",
@@ -301,7 +324,7 @@
             "type": "RECORD"
           },
           {
-            "description": "Counts the number of times a timing metric was used incorrectly. The labels are the `category.name` identifier of the metric.",
+            "description": "Counts the number of times a timing metric was used incorrectly.\nThe labels are the `category.name` identifier of the metric.\n",
             "fields": [
               {
                 "mode": "NULLABLE",
@@ -319,7 +342,7 @@
             "type": "RECORD"
           },
           {
-            "description": "Counts the number of times a metric was set to an invalid value. The labels are the `category.name` identifier of the metric.",
+            "description": "Counts the number of times a metric was set to an invalid value.\nThe labels are the `category.name` identifier of the metric.\n",
             "fields": [
               {
                 "mode": "NULLABLE",
